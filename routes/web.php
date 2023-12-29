@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Exam;
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +23,9 @@ Route::get('/', function () {
 Route::get('newTest', function () {
     return view('test.newtest');
 })->name('newTest');
+Route::get('/createNew', function () {
+    return view('admin.index');
+});
+Route::post('/exam',[ExamController::class,'index'])->name('exam');
+
+Route::resource('users',UserController::class);

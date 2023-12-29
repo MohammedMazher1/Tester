@@ -10,17 +10,11 @@ $("#submitTest").click(function() {
         // Iterate through options within the current question container
         $(this).find(".options-list li").each(function () {
             var optionInput = $(this).find(".optionInput").val();
-            if($(this).find("input[type='radio']").is(':checked')){
-            var radioValue = 'true';
-            }else{
-            var radioValue = 'false';
-            }
-            // var radioValue = $(this).find("input[type='radio']:checked").val();
+            var radioValue = $(this).find("input[type='radio']").is(':checked') ? 'true' : 'false';
 
             // Add option to options object with radio button value as the key
-            options[optionInput] =radioValue ;
+            options[optionInput] = radioValue;
         });
-
 
         // Create a question object and add it to the quizArray
         var questionObject = {
@@ -31,9 +25,22 @@ $("#submitTest").click(function() {
         quizArray.push(questionObject);
     });
 
-    // Display the quiz array in the console (you can replace this with your desired logic)
-    console.log("Quiz Array:", quizArray);
+    // Send the quizArray to the Laravel route using AJAX
+    $.ajax({
+        url: 'http://127.0.0.1:8000/exam', // Replace with the actual route URL
+        type: 'POST',
+        data: { quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
+        success: function(response) {
+            // Handle the server's response if needed
+            document.write(response);
+        },
+        error: function(error) {
+            // Handle errors if any
+            console.log("Error submitting quiz:");
+        }
+    });
 });
+
 
 $("#addQuestion").click(function(){
 $('.questions').append(
@@ -96,4 +103,24 @@ $(this).closest('.question').remove();
 $(".questions").on('click','ul li .fa-xmark',function(){
 $(this).closest('li').remove();
 });
+
+// fetch('http://127.0.0.1:8000/exam', {
+//             method: 'POST',
+//             })
+//             .then(response => {
+//                 if (!response.ok) {
+//                 throw new Error('Network response was not ok');
+//                 }
+//                 return response.json();
+//             })
+//             .then(data => { data
+//                 data.forEach(author => {
+//                     $('#Dauthors').eq(0).val(author.name);
+//                 });
+//             })
+//             .catch(error => {
+//                 console.error('Error during fetch operation:', error);
+//             });
+//             let row = button.parentNode.parentNode;
+//             const postId = parseInt(row.querySelectorAll('input[type="hidden"]')[0].value);
 

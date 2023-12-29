@@ -61,7 +61,7 @@
     background-size: cover;
     opacity: 0.1;
     z-index: 1;
-    
+
 }
 
 .questions .question{
@@ -196,4 +196,37 @@
 }
 ul.options-list li:hover > .fa-xmark{
     visibility: visible;
+}
+/* start user mange style */
+
+.userMange .createUser{
+    text-decoration: none;
+    background-color: var(--black-color);
+    border: 1px solid var(--white-color);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    display: block;
+    width: 150px;
+    color: var(--white-color);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.createUser:hover{
+    color: var(--white-color) !important;
+   background-color: var(--gold-color);
+}
+.userMange{
+    background-color: var(--black-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 10px;
+    width: 800px;
+    border-radius: 5px;
+    transform: translate(-50%,-50%);
+}
+
+.userMange a:hover{
+    color: var(--gold-color);
 }

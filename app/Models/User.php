@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -20,13 +21,20 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
-        'user_name',
-        'phone',
         'gender',
-        'type'
+        'phone',
+        'type',
+        'password',
+        'user_name'
     ];
-
+    public function trainee(): HasOne
+    {
+        return $this->hasOne(Trainee::class);
+    }
+    public function trainer(): HasOne
+    {
+        return $this->hasOne(Trainer::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
