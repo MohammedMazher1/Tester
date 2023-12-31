@@ -39,9 +39,12 @@ class ExamController extends Controller
 
         return  view('test.newTest');
     }
+    public function show(Request $request)
+    {   $id = 48;
+
+        $exam = Exam::find($id);
+        return view('test.show' , compact('exam'));
+    }
 }
 
-// $data = $request->all();
-// $exam = json_decode($data['quizArray']);
 
-// return var_dump($exam);
