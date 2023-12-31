@@ -429,7 +429,7 @@ section.services .cards > .card > img{
     background-color: var(--black-color);
     border-radius: 30px 30px 0 0;
     padding: 20px 20px 0 20px;
-    margin-top: 60px;
+    margin-top: 20px;
     position: relative;
     color: var(--gold-color);
 }
@@ -525,54 +525,54 @@ section.trainer > div:hover{
 
 /* start exam show style */
 section.showExam{
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    background-color: var(--black-color);
+    margin-top: 1px ;
  }
- section.showExam .questionContainer{
+ .showExam .examTitle{
+  text-align: center;
+  width: 100%;
+  color: var(--white-color);
+ }
+ .showExam .questionContainer{
+     margin: auto;
      background-color: var(--black-color);
-     padding: 10px;
+     border: 1px solid var(--white-color);
      width: 500px;
-     border-radius: 5px;
-     color: var(--white-color);
-     font-weight: bold;
-
- }
- section.showExam .question{
-    display: flex;
-    justify-content: space-between;
-
- }
- section.showExam .question .pageNo{
-     color: var(--gold-color);
- }
- .optionsContainer {
+     text-align: end;
      padding: 10px;
-     display: flex;
-     flex-direction: column;
-     align-items: flex-end;
-     gap: 20px;
-     width: 100%;
- }
- .options{
-     display: flex;
-     flex-direction: column;
-     gap: 25px;
- }
- .options div{
-     display: flex;
-     gap: 80px;
-     justify-content: space-between;
- }
- .options span{
-     background-color: var(--white-color);
-     padding: 5px 10px;
+     margin-top: 20px;
      border-radius: 5px;
-     width: 180px;
-     text-align: center;
+ }
+ .showExam .questionContainer .questionText {
      color: var(--gold-color);
  }
 
+ .showExam .questionContainer ul{
+     list-style: none;
+     margin-left: 10px;
+     margin-top: 10px;
+     color: var(--white-color);
+ }
+ .showExam .questionContainer ul li{
+     margin-top: 5px;
+     font-size: 18px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 5px;
+ }
+ .showExam #saveTest{
+     padding: 5px 20px;
+     display: block;
+     margin: auto;
+     margin-top: 20px;
+     background-color: transparent;
+     border: 1px solid var(--gold-color);
+     color: var(--white-color);
+     cursor: pointer;
+     transition: all 0.5s ease;
+ }
+ .showExam #saveTest:hover{
+     background-color: var(--gold-color);
+ }
  /* end exam show style */

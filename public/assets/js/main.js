@@ -108,6 +108,32 @@ $(this).closest('.question').remove();
 $(".questions").on('click','ul li .fa-xmark',function(){
 $(this).closest('li').remove();
 });
+/* this code to submit student exam */
+$("#saveTest").click(function() {
+    console.log("some thing")
+    var quizArray = []; // Array to store questions and options
+    // Iterate through question containers
+    $(".question").each(function() {
+        var question = $(this).find(".questionText").html();
+        var questionOptin = '';
+        // Iterate through options within the current question container
+        $(this).find(".options-list li").each(function () {
+            if($(this).find("input[type='radio']").is(':checked')){
+                questionOptin = $(this).find(".questionOptin").html();
+            }
+        });
+        var questionObject = {
+            question: question,
+            option: questionOptin
+            };
+
+        quizArray.push(questionObject);
+    });
+
+    // Display the quiz array in the console (you can replace this with your desired logic)
+    console.log("Quiz Array:", quizArray);
+});
+
 
 // fetch('http://127.0.0.1:8000/exam', {
 //             method: 'POST',
