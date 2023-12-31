@@ -42,7 +42,7 @@
                             <span>إشتراك</span>
                             <i class="fa-solid fa-right-to-bracket"></i>
                         </a>
-                        <a href="#" class="headerInput">
+                        <a  href="{{ route('login') }}" class="headerInput">
                             <span>تسجيل الدخول</span>
                             <i class="fa-solid fa-registered"></i>
                         </a>

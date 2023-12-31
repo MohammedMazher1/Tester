@@ -5,6 +5,7 @@ use App\Http\Controllers\Exam;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProgramController;
 use App\Models\Program;
 
@@ -35,10 +36,6 @@ Route::get('/show',[ExamController::class,'show'])->name('show');
 
 Route::resource('users',UserController::class);
 Route::resource('programs',ProgramController::class);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
