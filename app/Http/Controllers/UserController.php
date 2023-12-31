@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Trainer;
+use App\Models\Trainee;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -35,9 +37,12 @@ class UserController extends Controller
         $creationData["password"] = Hash::make($request->phone);
         $creationData["user_name"] = $request->phone;
         $user = User::create($creationData);
-         // Create a trainer for the user
-         $user->trainer()->create();
-         return view("user.index");
+        if($request->input("type") == 'trainer') {
+            $user->trainer()->create();
+        }else{
+            $user->trainee()->create();
+        }
+         return redirect()->route("users.index");
      }
 
 
@@ -46,7 +51,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -54,7 +59,9 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+
+        return view("user.edit", compact("user"));
     }
 
     /**
@@ -62,7 +69,30 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $user=User::find($id)->update($request->all());
+        User::saved($user);
+        $user = User::find($id);
+        if (!$user) {
+            // Handle the case where the user is not found
+            return response()->json(['error' => 'User not found'], 404);
+        }
+        if ($user->trainer() && $request->input('type') == 'trainee') {
+            // Create a new Trainee record
+            $trainee = new Trainee();
+            $trainee->user_id = $user->id;
+            // Set other trainee attributes as needed
+            $trainee->save();
+            // Delete the corresponding Trainer record
+            $user->trainer->delete();
+        }elseif($user->trainee() && $request->input('type') == 'trainer'){
+            $trainer = new Trainer();
+            $trainer->user_id = $user->id;
+            $trainer->save();
+            // Delete the corresponding Trainer record
+            $user->trainee->delete();
+        }
+        return redirect()->route("users.index");
     }
 
     /**
@@ -70,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::find($id)->delete();
+        return redirect()->route("users.index");
     }
 }

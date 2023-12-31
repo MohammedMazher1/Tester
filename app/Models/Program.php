@@ -11,6 +11,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Program extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'description',
+        'trainer_id'
+    ];
     public function trainer(): BelongsTo
     {
         return $this->belongsTo(Trainer::class);

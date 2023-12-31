@@ -4,26 +4,33 @@
   <main>
     <section class="questions" dir="ltr">
       <div class="back"></div>
+      <input type="text" id="exam_name" required placeholder="......اسم الاختبار">
+      <div class="testInformation">
+          <input type="date" name="date_of_preTest" id="date_of_preTest" required placeholder="تاريخ الاختبار القبلي">
+          <label for="date_of_preTest">الاختبار القبلي</label>
+          <input type="date" name="date_of_postTest" id="date_of_postTest" required placeholder="تاريخ الاختبار البعدي">
+          <label for="date_of_postTest">الاختبار البعدي</label>
+      </div>
       <div class="question" >
-        <input type="text" class="questionInput" placeholder="اكتب سوالك هنا ..." name="q" value="">
+        <input type="text" class="questionInput" required placeholder="اكتب سوالك هنا ..." name="q" value="">
         <ul class="options-list">
           <li>
-            <label for="q1-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q1-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q1-firstOption" name="q1-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q1-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q1-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q1-secondOption" name="q1-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q1-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q1-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q1-thirdOption" name="q1-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q1-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q1-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q1-fourthOption" name="q1-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
@@ -39,25 +46,25 @@
 
       </div>
       <div class="question" >
-        <input type="text" class="questionInput" placeholder="اكتب سوالك هنا ..." name="q" value="">
+        <input type="text" class="questionInput" required placeholder="اكتب سوالك هنا ..." name="q" value="">
         <ul class="options-list">
           <li>
-            <label for="q2-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q2-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q2-firstOption" name="q2-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q2-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q2-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q2-secondOption" name="q2-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q2-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q2-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q2-thirdOption" name="q2-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q2-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q2-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q2-fourthOption" name="q2-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
@@ -73,25 +80,25 @@
 
       </div>
       <div class="question" >
-        <input type="text" class="questionInput" placeholder="اكتب سوالك هنا ..." name="q" value="">
+        <input type="text" class="questionInput" required placeholder="اكتب سوالك هنا ..." name="q" value="">
         <ul class="options-list">
           <li>
-            <label for="q3-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q3-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q3-firstOption" name="q3-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q3-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q3-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q3-secondOption" name="q3-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q3-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q3-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q3-thirdOption" name="q3-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>
           <li>
-            <label for="q3-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+            <label for="q3-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
             <input type="radio" id="q3-fourthOption" name="q3-Option" value="HTML">
             <i class="fa-solid fa-xmark"></i>
           </li>

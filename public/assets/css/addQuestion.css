@@ -226,7 +226,38 @@ ul.options-list li:hover > .fa-xmark{
     border-radius: 5px;
     transform: translate(-50%,-50%);
 }
-
+.userMange button{
+    border: none;
+    outline: none;
+    color: var(--gold-color);
+    background-color: transparent;
+}
 .userMange a:hover{
     color: var(--gold-color);
+}
+
+/* test Information */
+.questions .testInformation{
+    z-index: 2;
+}
+.questions .testInformation input{
+    border: 1px solid var(--gold-color);
+    background: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--white-color);
+    z-index: 2;
+    cursor: pointer;
+}
+#exam_name{
+    padding: 5px 5px;
+    border: none;
+    outline: none;
+    background: var(--white-color);
+    border-radius: 10px;
+    z-index: 2;
+}
+#exam_name::placeholder{
+float: right;
+margin-right: 5px;
 }

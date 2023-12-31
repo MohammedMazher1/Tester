@@ -34,24 +34,24 @@
       <main>
         <div class="container">
         <div class="userMange">
-            <a href="{{Route('users.create')}}" class="createUser">اضافة مستحدم</a>
+            <a href="{{Route('programs.create')}}" class="createUser">اضافة مستحدم</a>
             <table class="table">
                 <tr>
-                    <th>اسم المستخدم</th>
-                    <th>الايميل</th>
-                    <th>رقم الامستخدم</th>
+                    <th>اسم الرنامج</th>
+                    <th>وصف البرنامج</th>
+                    <th>المدرب</th>
                     <th>تحكم</th>
                 </tr>
-                @foreach ($users as $user)
+                @foreach ($programs as $program)
                 <tr>
-                    <td>{{$user['name']}}</td>
-                    <td>{{$user['email']}}</td>
-                    <td>{{$user['phone']}}</td>
+                    <td>{{$program['name']}}</td>
+                    <td>{{$program['description']}}</td>
+                    <td>{{$program->trainer->user['name']}}</td>
                     <td>
-                        <form style="display: inline" action="{{Route('users.edit',$user['id'])}}" method="GET"><button><i class="fa-regular fa-pen-to-square"></i></button></form>
+                        <form style="display: inline" action="{{Route('programs.edit',$program['id'])}}" method="GET"><button><i class="fa-regular fa-pen-to-square"></i></button></form>
                        {{-- <a href="users/{{$user['id']}}"></a> --}}
                        <span> | </span>
-                       <form style="display: inline" action="{{Route('users.destroy',$user['id'])}}" method="POST">@method('DELETE')@csrf<button><i class="fa-solid fa-trash-can"></i></button></form>
+                       <form style="display: inline" action="{{Route('programs.destroy',$program['id'])}}" method="POST">@method('DELETE')@csrf<button><i class="fa-solid fa-trash-can"></i></button></form>
                     </td>
                 </tr>
                 @endforeach

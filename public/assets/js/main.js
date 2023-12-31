@@ -1,8 +1,12 @@
 let questionNo = 4;
 $("#submitTest").click(function() {
     var quizArray = []; // Array to store questions and options
-
-    // Iterate through question containers
+    var exam_info={
+        'exam_name': $('#exam_name').val(),
+        'date_of_preTest':$('#date_of_preTest').val(),
+        'date_of_postTest':$('#date_of_postTest').val()
+    }
+    quizArray.push(exam_info);
     $(".question").each(function() {
         var question = $(this).find(".questionInput").val();
         var options = {};
@@ -49,22 +53,22 @@ $('.questions').append(
     <input type="text" class="questionInput" placeholder="اكتب سوالك هنا ..." name="q" value="">
     <ul class="options-list">
         <li>
-        <label for="q${questionNo}-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+        <label for="q${questionNo}-firstOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
         <input type="radio" id="q${questionNo}-firstOption" name="q${questionNo}-firstOption" value="HTML">
         <i class="fa-solid fa-xmark"></i>
         </li>
         <li>
-        <label for="q${questionNo}-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+        <label for="q${questionNo}-secondOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
         <input type="radio" id="q2-secondOption" name="q${questionNo}-firstOption" value="HTML">
         <i class="fa-solid fa-xmark"></i>
         </li>
         <li>
-        <label for="q${questionNo}-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+        <label for="q${questionNo}-thirdOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
         <input type="radio" id="q${questionNo}-thirdOption" name="q${questionNo}-firstOption" value="HTML">
         <i class="fa-solid fa-xmark"></i>
         </li>
         <li>
-        <label for="q${questionNo}-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+        <label for="q${questionNo}-fourthOption"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
         <input type="radio" id="q${questionNo}-fourthOption" name="q${questionNo}-firstOption" value="HTML">
         <i class="fa-solid fa-xmark"></i>
         </li>
@@ -89,8 +93,9 @@ $(".questions").on("click",'.addOptionBtn', function() {
     let labelAttr = optionsList.find('label').attr('for');
     var newOption = $(`
     <li>
-    <label for="new-question${questionNo}"><input type="text" name="optionInput" class="optionInput" placeholder="option" value="OPTION"></label>
+    <label for="new-question${questionNo}"><input type="text" name="optionInput" class="optionInput" placeholder="OPTION" required></label>
     <input type="radio" id="new-question${questionNo}" name="${name}" value="HTML">
+    <i class="fa-solid fa-xmark"></i>
     </li>
     `);
     optionsList.append(newOption);

@@ -10,6 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Exam extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'date_of_preTest',
+        'date_of_postTest',
+        'trainer_id'
+    ];
     public function program(): BelongsTo
     {
         return $this->belongsTo(Program::class);

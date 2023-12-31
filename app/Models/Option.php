@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Option extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'status',
+        'question_id',
+        'option'
+    ];
     public function question(): BelongsTo
     {
         return $this->belongsTo(Question::class);

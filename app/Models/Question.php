@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Question extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'question',
+        'exam_id'
+    ];
     public function exam(): BelongsTo
     {
         return $this->belongsTo(Exam::class);

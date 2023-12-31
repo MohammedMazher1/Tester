@@ -5,6 +5,8 @@ use App\Http\Controllers\Exam;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProgramController;
+use App\Models\Program;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,8 @@ Route::get('newTest', function () {
 Route::get('/createNew', function () {
     return view('admin.index');
 });
-Route::post('/exam',[ExamController::class,'index'])->name('exam');
+Route::post('/exam',[ExamController::class,'store'])->name('exam');
+Route::get('/exam',[ExamController::class,'index'])->name('exam');
 
 Route::resource('users',UserController::class);
+Route::resource('programs',ProgramController::class);

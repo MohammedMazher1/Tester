@@ -505,3 +505,11 @@ input {
     padding: 60px 50px;
   }
 }
+
+/* start program style*/
+#programDescription{
+    height: 80px;
+    width: 100%;
+    border: navajowhite;
+    outline: navajowhite;
+}
