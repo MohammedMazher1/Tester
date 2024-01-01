@@ -3,7 +3,7 @@
   <!-- start main -->
   <main>
     <section class="questions" dir="ltr">
-      <div class="back"></div>
+      {{-- <div class="back"></div> --}}
       <input type="text" id="exam_name" required placeholder="......اسم الاختبار">
       <div class="testInformation">
           <input type="date" name="date_of_preTest" id="date_of_preTest" required placeholder="تاريخ الاختبار القبلي">

@@ -1,78 +1,64 @@
-    @extends('layouts.user')
+    @extends('layouts.admin')
     @section('content')
-    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
-        <div class="wrapper wrapper--w960">
-            <div class="card card-2">
-                <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">ادخال البينات</h2>
-                    <form method="POST"  action="{{asset('/users')}}">
-                        {{-- @method('post') --}}
-                        @csrf
-                        <div class="input-group">
-                            <input class="input--style-2" type="text" required placeholder="الاسم" name="name">
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-2" type="tel" required placeholder="رقم الجوال" name="phone">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-2" type="email" required placeholder="الايميل" name="email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">الجنس</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="rs-select2 js-select-simple select--no-search">
-                                    <select name="type">
-                                        <option disabled="disabled" selected="selected">نوع المستخدم</option>
-                                        <option>trainer</option>
-                                        <option>trainee</option>
-                                    </select>
-                                    <div class="select-dropdown"></div>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="class">
-                                    <option disabled="disabled" selected="selected">Class</option>
-                                    <option>Class 1</option>
-                                    <option>Class 2</option>
-                                    <option>Class 3</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div> --}}
-                        {{-- <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-2" type="text" placeholder="Registration Code" name="res_code">
-                                </div>
-                            </div>
-                        </div> --}}
-                        <div class="p-t-30">
-                            <button class="btn btn--radius btn--green" type="submit">حفظ</button>
-                        </div>
-                    </form>
+    <div class="col-sm-10">
+        <form method="POST"  action="{{asset('/users')}}">
+            @csrf
+        <div class="card" style="margin-right: 25%;margin-top: 10%;">
+            <div class="card-header">
+                <strong>اضافة مستخدم </strong>
+
+            </div>
+            <div class="card-block">
+                <div class="form-group">
+                    <label for="company">اسم المستخدم</label>
+                    <input type="text" required class="form-control" name="name" id="name" placeholder="اسم المستخدم">
+                </div>
+
+                <div class="form-group">
+                    <label for="vat">الرقم الجوال</label>
+                    <input type="tel" required class="form-control" name="phone" id="vat" placeholder="776533887">
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-sm-8">
+                        <label for="city">الايميل</label>
+                        <input type="email" class="form-control" required name="email" id="city" placeholder="example@outlook.sa">
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="postal-code">الجنس</label>
+                        <select name="gender" class="form-control">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                    </div>
+
+                <div class="row">
+
+                    <div class="form-group col-sm-8">
+                        <label for="city">نوع المستخدم</label>
+                        <select name="type" class="form-control">
+                            <option>trainer</option>
+                            <option>trainee</option>
+                        </select>
+                        <div class="select-dropdown"></div>
+                    </div>
+
+
+                </div>
+                <!--/row-->
+
+                <div class="card-footer" style="text-align: left;">
+                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> حفظ</button>
+                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> الغاء</button>
+                </div>
+
                 </div>
             </div>
         </div>
+        </form>
     </div>
     @endsection
 

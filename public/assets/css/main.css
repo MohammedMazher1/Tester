@@ -29,34 +29,36 @@ body {
     background-color:var(--white-color);
 }
 .container {
-    margin:0;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
 
 }
+
 /* small*/
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .container {
         width: 750px;
     }
-} */
+}
 
 /* medium*/
 
-/* @media (min-width: 992px) {
+@media (min-width: 992px) {
     .container {
         width: 970px;
     }
-} */
+}
 
 /* large*/
 
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .container {
         width: 1170px;
     }
-} */
+}
 
 .header {
     background-color: var(--black-color);
@@ -118,6 +120,8 @@ body {
     border: none;
     height: 22px;
     outline: none;
+    padding: 14px 0 ;
+
 
 }
 .header .inputs .login .headerInput{
@@ -130,6 +134,9 @@ body {
 .header .inputs .login .headerInput:hover{
     background-color: var(--gold-color);
     color: var(--white-color);
+}
+.header .inputs i{
+    font-size: 18px;
 }
 .header .inputs  .search{
     position: relative;
@@ -576,3 +583,59 @@ section.showExam{
      background-color: var(--gold-color);
  }
  /* end exam show style */
+
+
+/* start login style */
+section.login{
+    height: calc(100vh - 380px);
+}
+.LoginCard{
+    background-color: var(--black-color);
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding:30px 20px;
+    justify-content: space-between;
+    border-radius: 15px;
+    color: var(--white-color);
+}
+.LoginCard > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.LoginCard  div input{
+    width: 100%;
+    border: none;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+}
+.LoginCard  div > i{
+    position: absolute;
+    color: var(--gold-color);
+    left: 30px;
+    font-size: 18px;
+}
+.LoginCard > button{
+    padding: 8px 0;
+    border: none;
+    background-color: var(--black-color);
+    border: 1px solid var(--gold-color);
+    color:  var(--white-color);
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+.LoginCard > button:hover{
+    background-color: var(--gold-color);
+    border: 1px solid var(--white-color);
+}
+/* end login style */

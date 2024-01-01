@@ -21,43 +21,45 @@
         <img src="assets/img/student.png" alt="student image">
     </div>
 </section>
-<section class="services" id="services">
-    <div class="title">
-        <h2>خدماتنا</h2>
-        <span></span>
-    </div>
-    <div class="cards">
-        <div class="card">
-            <div class="text">
-                <h3>نشر الامتحان online</h3>
-                <p>يقوم النظام بشر الامتحان online </p>
-                <p>كما بالإمكان نشر الامتحان على برامج التواصل</p>
-            </div>
-            <img src="assets/img/online.png" alt="">
+<section class="services">
+    <div class="container">
+        <div class="title">
+            <h2>خدماتنا</h2>
+            <span></span>
         </div>
-        <div class="card">
-            <div class="text">
-                <h3>امتحان الطلاب </h3>
-                <p>يقوم النظام بنشر الاختبار في الوقت المحدد  </p>
-                <p>ليستطيع جميع الطلاب الإجابة في نفس الوقت</p>
+        <div class="cards">
+            <div class="card">
+                <div class="text">
+                    <h3>نشر الامتحان online</h3>
+                    <p>يقوم النظام بشر الامتحان online </p>
+                    <p>كما بالإمكان نشر الامتحان على برامج التواصل</p>
+                </div>
+                <img src="assets/img/online.png" alt="">
             </div>
-            <img src="assets/img/prepare.png" alt="">
-        </div>
-        <div class="card">
-            <div class="text">
-                <h3>قرأه الإجابات  وتخزينها</h3>
-                <p>يقوم النظام بقراه الأجابات وتصحيحها تلقائيا</p>
-                <p>كما يقوم النظام بالتعرف على الإجابه الصحيحة</p>
+            <div class="card">
+                <div class="text">
+                    <h3>امتحان الطلاب </h3>
+                    <p>يقوم النظام بنشر الاختبار في الوقت المحدد  </p>
+                    <p>ليستطيع جميع الطلاب الإجابة في نفس الوقت</p>
+                </div>
+                <img src="assets/img/prepare.png" alt="">
             </div>
-            <img src="assets/img/omr.png" alt="">
-        </div>
-        <div class="card">
-            <div class="text">
-                <h3>تعديل الامتحان بسهولة</h3>
-                <p>يتيح النظام للأستاذ عملية تخزين الاختيار</p>
-                <p>من خلال هذا العملية يسطيع الأستاذ التعديل علية</p>
+            <div class="card">
+                <div class="text">
+                    <h3>قرأه الإجابات  وتخزينها</h3>
+                    <p>يقوم النظام بقراه الأجابات وتصحيحها تلقائيا</p>
+                    <p>كما يقوم النظام بالتعرف على الإجابه الصحيحة</p>
+                </div>
+                <img src="assets/img/omr.png" alt="">
             </div>
-            <img src="assets/img/crop.png" alt="">
+            <div class="card">
+                <div class="text">
+                    <h3>تعديل الامتحان بسهولة</h3>
+                    <p>يتيح النظام للأستاذ عملية تخزين الاختيار</p>
+                    <p>من خلال هذا العملية يسطيع الأستاذ التعديل علية</p>
+                </div>
+                <img src="assets/img/crop.png" alt="">
+            </div>
         </div>
     </div>
 </section>

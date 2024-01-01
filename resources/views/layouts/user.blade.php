@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
     <link href="{{asset('/assets/vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
+    <link href="{{asset('/assets/css/simple-line-icons.css')}}" rel="stylesheet">
+    <!-- Main styles for this application -->
+    <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 
     <!-- Main CSS-->
     <link href="{{asset('/assets/css/admin.css')}}" rel="stylesheet" media="all">

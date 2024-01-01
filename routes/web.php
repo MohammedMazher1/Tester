@@ -22,17 +22,23 @@ use App\Models\Program;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
+
 Route::get('newTest', function () {
     return view('test.newtest');
 })->name('newTest');
+Route::get('admin', function () {
+    return view('admin.dashbord');
+});
 Route::get('/createNew', function () {
     return view('admin.index');
 });
-Route::post('/exam',[ExamController::class,'store'])->name('exam');
-Route::get('/exam',[ExamController::class,'index'])->name('exam');
-Route::get('/show',[ExamController::class,'show'])->name('show');
 
+Route::get('/show',[ExamController::class,'show'])->name('show');
+Route::middleware('admin')->group(function () {
+    Route::post('/exam',[ExamController::class,'store'])->name('exam');
+    Route::get('/exam',[ExamController::class,'index'])->name('exam');
+});
 
 Route::resource('users',UserController::class);
 Route::resource('programs',ProgramController::class);

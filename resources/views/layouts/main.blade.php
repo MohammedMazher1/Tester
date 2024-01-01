@@ -38,14 +38,19 @@
                         <input type="text" class="headerInput" placeholder="اكتب كلمة للبحث .....">
                     </div>
                     <div class="login ">
-                        <a href="#" class="headerInput">
-                            <span>إشتراك</span>
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                        </a>
+                        @guest
                         <a  href="{{ route('login') }}" class="headerInput">
                             <span>تسجيل الدخول</span>
                             <i class="fa-solid fa-registered"></i>
                         </a>
+                        @else
+                        <form id="logout" action="{{ route('logout') }}" method="POST">
+                            <a role="button" class="headerInput"
+                            onclick="document.getElementById('logout').submit();">تسجيل الخروج</a>
+                            @csrf
+                        </form>
+                        @endguest
+
                     </div>
                 </div>
             </nav>
