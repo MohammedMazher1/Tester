@@ -13,14 +13,15 @@ class ExamController extends Controller
         return view('test.newTest');
     }
     public function store(Request $request){
+        $user = auth()->user();
         $examData = [];
         $data = $request->all();
         $exam = json_decode($data['quizArray']);
         $examData['name']= $exam[0]->exam_name;
         $examData['date_of_preTest']= $exam[0]->date_of_preTest;
         $examData['date_of_postTest']= $exam[0]->date_of_postTest;
+        $examData['trainer_id']= $user->id;
         $newexam = Exam::create($examData);
-        // $examData['trainer_id']= 14;
         $questions = [];
         for($i = 1; $i < count($exam) ; $i++){
             $questions['question'] = $exam[$i]->question;
@@ -37,7 +38,7 @@ class ExamController extends Controller
             }
         };
 
-        return  view('test.newTest');
+        return  $request;
     }
     public function show(Request $request)
     {   $id = 48;

@@ -1,4 +1,3 @@
-
 @extends('layouts/main')
 @section('content')
 <section class="landing" style="overflow: hidden;" id="home">

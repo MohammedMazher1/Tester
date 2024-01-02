@@ -28,7 +28,7 @@ $("#submitTest").click(function() {
 
         quizArray.push(questionObject);
     });
-
+    console.log(quizArray);
     // Send the quizArray to the Laravel route using AJAX
     $.ajax({
         url: 'http://127.0.0.1:8000/exam', // Replace with the actual route URL

@@ -9,7 +9,7 @@
     <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
     <meta name="author" content="Lukasz Holeczek">
     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="shortcut icon" href="{{asset('/assets/img/logo.png')}}">
     <title>إدارة النظام</title>
     <!-- Icons -->
 

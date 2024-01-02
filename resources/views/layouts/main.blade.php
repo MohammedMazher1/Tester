@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
+    <link rel="shortcut icon" href="{{asset('/assets/img/logo.png')}}">
+
     <title>Tester</title>
 </head>
 <body>
