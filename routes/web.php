@@ -24,13 +24,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
-Route::get('newTest', function () {
-    return view('test.newtest');
-})->name('newTest');
-
-Route::get('/createNew', function () {
-    return view('admin.index');
-});
 
 Route::get('/show',[ExamController::class,'show'])->name('show');
 Route::post('/exam',[ExamController::class,'store'])->name('exam');

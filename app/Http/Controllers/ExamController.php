@@ -18,9 +18,9 @@ class ExamController extends Controller
         $data = $request->all();
         $exam = json_decode($data['quizArray']);
         $examData['name']= $exam[0]->exam_name;
+        $examData['trainer_id']= $user->trainer->id;;
         $examData['date_of_preTest']= $exam[0]->date_of_preTest;
         $examData['date_of_postTest']= $exam[0]->date_of_postTest;
-        $examData['trainer_id']= $user->id;
         $newexam = Exam::create($examData);
         $questions = [];
         for($i = 1; $i < count($exam) ; $i++){
@@ -38,7 +38,7 @@ class ExamController extends Controller
             }
         };
 
-        return  $request;
+        return  view('test.newTest');
     }
     public function show(Request $request)
     {   $id = 48;
