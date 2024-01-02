@@ -10,7 +10,7 @@
     <meta name="author" content="Lukasz Holeczek">
     <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <title>نظام متابعة الموظفين</title>
+    <title>إدارة النظام</title>
     <!-- Icons -->
 
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
@@ -27,17 +27,17 @@
         <div class="container-flHuid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="#">
-                <img  src="assets/img/logo.png" alt="" style="width: 100px;">
+                <img  src="{{asset('assets/img/logo.png')}}" alt="">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
                 </li>
                 <li class="nav-item p-x-1">
-                    <a class="nav-link" href="#">الرئيسية</a>
+                    <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
                 </li>
                 <li class="nav-item p-x-1">
-                    <a class="nav-link" href="#">المستخدمين</a>
+                    <a class="nav-link" href="{{Route('users.index')}}">المستخدمين</a>
                 </li>
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="#">الاعدادات</a>
@@ -54,8 +54,8 @@
 
                 <li class="nav-title">إدارة النظام</li>
                     <li class="nav-item">
-                    <a class="nav-link" href="EmployeeManagement.html"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
-                    <a class="nav-link" href="DepartmentManagement.html"><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
+                    <a class="nav-link" href="{{Route('users.index')}}"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
+                    <a class="nav-link" href="{{Route('programs.index')}}"><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
                     <a class="nav-link" href="Requests-Management.html"><i class="fa fa-comments"></i>ادارة المتدربين</a>
                     <a class="nav-link" href="Overtime.html"><i class="fa fa-calendar"></i> ادارة الاختبارات </a>
                 </li>

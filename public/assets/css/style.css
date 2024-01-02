@@ -2,15 +2,17 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
   margin: 0; }
 
 article,
 aside,
 details,
-figcaption,
-figure,
 footer,
 header,
 main,
@@ -1954,10 +1956,10 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: var(--white-color);
-  background-color: #20a8d8;
-  border-color: #20a8d8; }
+  background-color: #187fa3;
+  border-color: var(--white-color); }
   .btn-primary:hover {
-    color: var(--white-color);
+    color:white;
     background-color: #1985ac;
     border-color: #187fa3; }
   .btn-primary:focus, .btn-primary.focus {
@@ -2094,7 +2096,7 @@ fieldset[disabled] a.btn {
 
 .btn-danger {
   color: var(--white-color);
-  background-color: #f86c6b;
+  background-color: var(--white-color);
   border-color: #f86c6b; }
   .btn-danger:hover {
     color: var(--white-color);
@@ -2990,8 +2992,8 @@ input[type="button"].btn-block {
   margin-right: -0.625rem; }
 
 .card-primary {
-  background-color: #20a8d8;
-  border-color: #20a8d8; }
+  background-color: var(--black-color);
+ }
   .card-primary .card-header,
   .card-primary .card-footer {
     background-color: transparent; }
@@ -3018,8 +3020,8 @@ input[type="button"].btn-block {
     background-color: transparent; }
 
 .card-danger {
-  background-color: #f86c6b;
-  border-color: #f86c6b; }
+  background-color: var(--gold-color);
+  border-color:#DBDAD7;; }
   .card-danger .card-header,
   .card-danger .card-footer {
     background-color: transparent; }
@@ -3641,7 +3643,7 @@ button.list-group-item-danger {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     border: 0; }
 
 .embed-responsive-21by9 {
@@ -4743,11 +4745,12 @@ a.text-danger:focus, a.text-danger:hover {
       margin-bottom: 0; }
 
 .card-primary {
-  background-color: #20a8d8; }
+  background-color: var(--black-color); }
   .card-primary .card-header {
-    border-color: #1d97c2; }
+    border-color: #1d97c2;
+ }
   .card-primary .card-header, .card-primary .card-footer {
-    background-color: #1d97c2; }
+    background-color: var(--black-color); }
 
 .card-secondary {
   background-color: #cfd8dc; }
@@ -4778,11 +4781,12 @@ a.text-danger:focus, a.text-danger:hover {
     background-color: #dfb600; }
 
 .card-danger {
-  background-color: #f86c6b; }
+  background-color: var(--gold-color); }
   .card-danger .card-header {
-    border-color: #f75453; }
+    border-color: var(--black-color);
+}
   .card-danger .card-header, .card-danger .card-footer {
-    background-color: #f75453; }
+    background-color: var(--gold-color); }
 
 .card-inverse {
   color: var(--white-color); }
@@ -5143,7 +5147,8 @@ html, body {
     padding-right: 7.5px; }
 
 .main .container-fluid {
-  padding: 30px 30px; }
+  /* padding: 30px 30px; */
+}
 
 html.sidebar-opened {
   max-width: 100% !important;
@@ -5151,7 +5156,7 @@ html.sidebar-opened {
 
 body {
   position: relative;
-  min-height: 100vh;
+  min-height:100vh ;
   padding: 0;
   margin: 0; }
   body .bd-title.main {

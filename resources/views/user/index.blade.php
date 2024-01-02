@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div style=" margin-top: 80px;">
-
+<div>
     <div class="row">
 
         <div class="col-lg-12">

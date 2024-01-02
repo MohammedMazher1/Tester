@@ -47,7 +47,7 @@ $("#submitTest").click(function() {
 
 
 $("#addQuestion").click(function(){
-$('.questions').append(
+$('.questions .container').append(
     `
     <div class="question" >
     <input type="text" class="questionInput" placeholder="اكتب سوالك هنا ..." name="q" value="">

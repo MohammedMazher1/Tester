@@ -27,22 +27,22 @@ Route::get('/', function () {
 Route::get('newTest', function () {
     return view('test.newtest');
 })->name('newTest');
-Route::get('admin', function () {
-    return view('admin.dashbord');
-});
+
 Route::get('/createNew', function () {
     return view('admin.index');
 });
 
 Route::get('/show',[ExamController::class,'show'])->name('show');
 Route::middleware('admin')->group(function () {
+    Route::get('admin', function () {
+        return view('admin.dashbord');
+    })->name('admin');
     Route::post('/exam',[ExamController::class,'store'])->name('exam');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
+    Route::resource('users',UserController::class);
 });
 
-Route::resource('users',UserController::class);
 Route::resource('programs',ProgramController::class);
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

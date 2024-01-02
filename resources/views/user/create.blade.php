@@ -1,7 +1,7 @@
     @extends('layouts.admin')
     @section('content')
     <div class="col-sm-10">
-        <form method="POST"  action="{{asset('/users')}}">
+        <form method="POST"  action="{{Route('users.store')}}">
             @csrf
         <div class="card" style="margin-right: 25%;margin-top: 10%;">
             <div class="card-header">

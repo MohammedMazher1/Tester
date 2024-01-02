@@ -1,53 +1,43 @@
-    @extends('layouts.user')
+    @extends('layouts.admin')
     @section('content')
-    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
-        <div class="wrapper wrapper--w960">
-            <div class="card card-2">
-                <div class="card-heading"></div>
-                <div class="card-body">
-                    <h2 class="title">ادخال بينات البرنامج</h2>
-                    <form method="POST"  action="{{asset('/programs')}}">
-                        {{-- @method('post') --}}
-                        @csrf
-                        <div class="input-group">
-                            <input class="input--style-2" type="text" required placeholder="الاسم" name="name">
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-4">
-                                <div class="input-group">
-                                    <textarea name="description" id="programDescription" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="trainer_id">
-                                            <option disabled="disabled" selected="selected">المدرب</option>
-                                            @foreach ($trainers as $trainer)
-                                            <option value="{{ $trainer->id }}">{{ $trainer->user['name'] }}</option>
-                                             @endforeach
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-2" type="text" placeholder="Registration Code" name="res_code">
-                                </div>
-                            </div>
-                        </div> --}}
-                        <div class="p-t-30">
-                            <button class="btn btn--radius btn--green" type="submit">حفظ</button>
-                        </div>
-                    </form>
+    <div class="col-sm-10">
+        <form method="POST"  action="{{asset('/programs')}}">
+            @csrf
+        <div class="card" style="margin-right: 25%;margin-top: 7%;">
+            <div class="card-header">
+                <strong>اضافة برنامج</strong>
+
+            </div>
+            <div class="card-block">
+                <div class="form-group">
+                    <label for="company">اسم البرنامج</label>
+                    <input type="text" required class="form-control" name="name" id="name" placeholder="اسم البرنامج">
+                </div>
+
+                <div class="form-group">
+                    <label for="vat">وصف البرنامج</label>
+                    <textarea required class="form-control" name="description" id="programDescription" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="row" style="margin: 0 ; position: relative;">
+                    <div class="form-group col-sm-4">
+                        <label for="postal-code">المدرب</label>
+                        <select name="trainer_id" class="form-control">
+                            @foreach ($trainers as $trainer)
+                            <option value="{{ $trainer->id }}">{{ $trainer->user['name'] }}</option>
+                             @endforeach
+                        </select>
+                        <div class="select-dropdown"></div>
+
+                    </div>
+                <!--/row-->
+                <div class="form-group" style="position: absolute;bottom: 0;left: 0;">
+                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> حفظ</button>
+                </div>
+
                 </div>
             </div>
         </div>
+        </form>
     </div>
     @endsection
-

@@ -42,27 +42,32 @@
 /* end header style */
 /* start question style  */
 .questions{
-    background-color: var(--black-color);
     position: relative;
-    padding: 60px 0;
+    /* padding: 60px 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin-top: 1px;
     color: var(--white-color);
-    overflow: hidden;
 }
 
-
+input{
+    border-radius: 5px;
+    background-color: var(--white-color);
+}
 .questions .question{
     border: 1px solid var(--white-color);
+    background-color: var(--black-color);
     padding: 20px;
-    border-radius: 10px;
-    min-width: 600px;
-    position: relative;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     transition: all 0.5s ease;
-    z-index: 2;
+    position: relative;
+    border-radius: 10px;
 }
 .questions .question .addOptionBtn{
     position: absolute;
@@ -77,38 +82,30 @@
     transition: all 0.5 ease;
     cursor: pointer;
 }
-.questions .question .addOptionBtn:hover{
+ .questions .question .addOptionBtn:hover{
     background-color: var(--gold-color);
-}
-.questions .question:hover{
+} 
+ .questions .question:hover{
     background-color: #454747;
     cursor: pointer;
 }
 .questions .question:hover > .icons{
     visibility:visible ;
-}
-.questions .question ul{
+} 
+ .questions .question ul{
     list-style: none;
-    float:left;
-    margin-left: 20px;
     margin-top: 10px;
-    color: var(--gold-color);
     direction: rtl;
 }
 .questions .question ul li{
     margin-bottom: 5px;
-    width: 200px;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
+} 
 .questions .question > input{
-   display: block;
-    width: 100%;
+    width: 500px;
     border: none;
     outline: none;
-    background-color: transparent;
-    color: var(--white-color);
+    color:var(--black-color);
+    padding: 8px;
     font-weight: bold;
     font-size: 18px;
 }
@@ -117,9 +114,9 @@
     font-size: 14px;
 }
 .questions .question > ul > li > label > input {
-    background-color: transparent;
     border: none;
     text-align: end;
+    padding: 6px;
     outline: none;
     color: var(--gold-color);
 }
@@ -188,6 +185,7 @@
 ul.options-list li:hover > .fa-xmark{
     visibility: visible;
 }
+
 /* start user mange style */
 
 .userMange .createUser{
@@ -217,36 +215,46 @@ ul.options-list li:hover > .fa-xmark{
     border-radius: 5px;
     transform: translate(-50%,-50%);
 }
-.userMange button{
-    border: none;
-    outline: none;
-    color: var(--gold-color);
-    background-color: transparent;
-}
+
 .userMange a:hover{
     color: var(--gold-color);
 }
 
 /* test Information */
 .questions .testInformation{
-    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 20px; */
+    background-color: var(--black-color);
+}
+.testInformation div{
+    width: 50%;
+    border: 1px solid var(--white-color);
+    background-color: var(--black-color);
+    border-radius: 10px;
+    padding: 10px;
+    gap:10px;
+    display: flex;
+    align-items: center;     
 }
 .questions .testInformation input{
-    border: 1px solid var(--gold-color);
     background: transparent;
-    border-radius: 10px;
-    padding: 5px 10px;
-    color: var(--white-color);
+    padding: 8px 10px;
+    background-color: var(--white-color);
     z-index: 2;
     cursor: pointer;
+    flex-grow: 1;
+    border: none;
 }
 #exam_name{
-    padding: 5px 5px;
+    margin: 20px auto;
+    display: block;
+    padding: 8px;
+    background-color: white;
     border: none;
     outline: none;
-    background: var(--white-color);
-    border-radius: 10px;
-    z-index: 2;
 }
 #exam_name::placeholder{
 float: right;
