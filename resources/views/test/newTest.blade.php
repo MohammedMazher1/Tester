@@ -15,6 +15,7 @@
                <label for="date_of_postTest">تاريخ البعدي</label>
              </div>
          </div>
+         <input type="hidden" name="_token" value="{{ Session::token() }}">
          <div class="question" >
            <input type="text" class="questionInput" required placeholder="اكتب سوالك هنا ..." name="q" value="">
            <ul class="options-list">

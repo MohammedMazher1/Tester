@@ -13,7 +13,7 @@
         <div>
             <a href="#">دخول اختبار</a>
             <span></span>
-            <a href="{{Route('newTest')}}">إنشاء اختبار</a>
+            <a href="{{Route('exam')}}">إنشاء اختبار</a>
         </div>
     </div>
     <div class="img">

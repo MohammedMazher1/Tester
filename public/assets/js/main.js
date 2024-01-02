@@ -29,11 +29,15 @@ $("#submitTest").click(function() {
         quizArray.push(questionObject);
     });
     console.log(quizArray);
+    var token = $("input[name='_token']").val();
+
     // Send the quizArray to the Laravel route using AJAX
     $.ajax({
         url: 'http://127.0.0.1:8000/exam', // Replace with the actual route URL
         type: 'POST',
-        data: { quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
+        data: {
+            "_token":token,
+            quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
         success: function(response) {
             // Handle the server's response if needed
             document.write(response);
@@ -111,27 +115,43 @@ $(this).closest('li').remove();
 /* this code to submit student exam */
 $("#saveTest").click(function() {
     console.log("some thing")
-    var quizArray = []; // Array to store questions and options
+    var options = []; // Array to store questions and options
     // Iterate through question containers
     $(".question").each(function() {
-        var question = $(this).find(".questionText").html();
         var questionOptin = '';
         // Iterate through options within the current question container
         $(this).find(".options-list li").each(function () {
             if($(this).find("input[type='radio']").is(':checked')){
-                questionOptin = $(this).find(".questionOptin").html();
+                questionOptin = $(this).find(".questionOptin").attr('value');
+                options.push(questionOptin);
             }
         });
-        var questionObject = {
-            question: question,
-            option: questionOptin
-            };
 
-        quizArray.push(questionObject);
     });
 
     // Display the quiz array in the console (you can replace this with your desired logic)
-    console.log("Quiz Array:", quizArray);
+    console.log("Quiz Array:", options);
+    var token = $("input[name='_token']").val();
+    $.ajax({
+        url: 'http://127.0.0.1:8000/result', // Replace with the actual route URL
+        type: 'POST',
+        headers: {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        },
+        data: {
+            "_token":token,
+             options: JSON.stringify(options) }, // Send the quizArray as JSON string
+        success: function(response) {
+            // Handle the server's response if needed
+            document.write(response);
+        },
+        error: function(error) {
+            // Handle errors if any
+            console.log("Error submitting quiz:");
+        }
+    });
 });
 
 

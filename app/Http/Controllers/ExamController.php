@@ -41,10 +41,17 @@ class ExamController extends Controller
         return  view('test.newTest');
     }
     public function show(Request $request)
-    {   $id = 48;
+    {
+         $id = 48;
 
         $exam = Exam::find($id);
         return view('test.show' , compact('exam'));
+    }
+
+    public function result(Request $request){
+
+        // $options = $request->all();
+        return $request->options;
     }
 }
 
