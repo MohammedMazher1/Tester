@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Exam;
+use App\Models\Trainee;
+use App\Models\ExamResult;
+
 class ExamController extends Controller
 {
     public function index(Request $request)
@@ -18,9 +22,9 @@ class ExamController extends Controller
         $data = $request->all();
         $exam = json_decode($data['quizArray']);
         $examData['name']= $exam[0]->exam_name;
-        $examData['trainer_id']= $user->trainer->id;;
-        $examData['date_of_preTest']= $exam[0]->date_of_preTest;
-        $examData['date_of_postTest']= $exam[0]->date_of_postTest;
+        $examData['trainer_id']= $user->trainer->id;
+        $examData['date_of_preTest']= $exam[0]->date_of_preTest.' '.$exam[0]->time_of_preTest;
+        $examData['date_of_postTest']= $exam[0]->date_of_postTest.' '.$exam[0]->time_of_postTest;
         $newexam = Exam::create($examData);
         $questions = [];
         for($i = 1; $i < count($exam) ; $i++){
@@ -49,9 +53,21 @@ class ExamController extends Controller
     }
 
     public function result(Request $request){
-
+        // $testDate = new DateTime('2024-01-03 21:30:00');
+        $options = ['28','31','32'];
+        $data = json_decode($request->exam);
+        $user = auth()->user();
+        $newResult=[];
+        $newResult['trainee_id'] = 12;
+        $newResult['exam_id'] = 48;
+        $newResult['exam_status'] ='pre';
+        $result = ExamResult::create($newResult);
+        foreach( $options as $option_id){
+            $result->examResiltDetails->create($option_id);
+        }
+        // print_r($testDate->format('h:i')) ;
         // $options = $request->all();
-        return $request->options;
+        return $request->exam;
     }
 }
 

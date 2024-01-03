@@ -4,6 +4,7 @@
     <h2 class="examTitle">HTML</h2>
     {{-- <form action="{{Route('result')}}" method="POST"> --}}
         {{-- @csrf --}}
+        <input type="hidden" id="exam_id" value="{{$exam->id}}">
     @foreach ($exam->questions as $question)
     <div class="questionContainer">
         <div class="question">
@@ -12,8 +13,8 @@
             <ul class="options-list">
                 @foreach ($question->options as $option)
                 <li>
-                    <label class="questionOptin" value="{{$option->id}}" for="{{$question->id}}option">{{$option->option}}</label>
-                    <input type="radio" id="{{$question->id}}option"  name="{{$question->id}}option" >
+                    <label class="questionOptin" value="{{$option->id}}" for="{{$option->id}}option">{{$option->option}}</label>
+                    <input type="radio" id="{{$option->id}}option"  name="{{$question->id}}option" >
                 </li>
                 @endforeach
             </ul>

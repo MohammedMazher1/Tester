@@ -4,7 +4,9 @@ $("#submitTest").click(function() {
     var exam_info={
         'exam_name': $('#exam_name').val(),
         'date_of_preTest':$('#date_of_preTest').val(),
-        'date_of_postTest':$('#date_of_postTest').val()
+        'date_of_postTest':$('#date_of_postTest').val(),
+        'time_of_preTest':$('#time_of_preTest').val(),
+        'time_of_postTest':$('#time_of_postTest').val()
     }
     quizArray.push(exam_info);
     $(".question").each(function() {
@@ -115,6 +117,8 @@ $(this).closest('li').remove();
 /* this code to submit student exam */
 $("#saveTest").click(function() {
     console.log("some thing")
+    let examId = $('#exam_id').val();
+    var exam = {};
     var options = []; // Array to store questions and options
     // Iterate through question containers
     $(".question").each(function() {
@@ -126,11 +130,15 @@ $("#saveTest").click(function() {
                 options.push(questionOptin);
             }
         });
+        exam ={
+            'exam_id':examId,
+            'options':options
+        }
 
     });
 
     // Display the quiz array in the console (you can replace this with your desired logic)
-    console.log("Quiz Array:", options);
+    console.log("Quiz Array:", exam);
     var token = $("input[name='_token']").val();
     $.ajax({
         url: 'http://127.0.0.1:8000/result', // Replace with the actual route URL
@@ -142,7 +150,7 @@ $("#saveTest").click(function() {
         },
         data: {
             "_token":token,
-             options: JSON.stringify(options) }, // Send the quizArray as JSON string
+             exam: JSON.stringify(exam) }, // Send the quizArray as JSON string
         success: function(response) {
             // Handle the server's response if needed
             document.write(response);

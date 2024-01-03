@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/show',[ExamController::class,'show'])->name('show');
     Route::post('/exam',[ExamController::class,'store'])->name('exam');
-    Route::post('/result',[ExamController::class,'result'])->name('result');
+    Route::get('/result',[ExamController::class,'result'])->name('result');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
 });
 

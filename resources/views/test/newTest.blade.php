@@ -6,14 +6,22 @@
         <div class="container">
          <input type="text" id="exam_name" required placeholder="......اسم الاختبار">
          <div class="testInformation">
+            <div>
+                <input type="date" name="date_of_postTest" id="date_of_postTest" required placeholder="تاريخ الاختبار البعدي">
+                <label for="date_of_postTest">الاختبار البعدي</label>
+            </div>
              <div>
                <input type="date" name="date_of_preTest" id="date_of_preTest" required placeholder="تاريخ الاختبار القبلي">
-               <label for="date_of_preTest">تاريخ القبلي</label>
+               <label for="date_of_preTest">الاختبار القبلي</label>
              </div>
-             <div>
-               <input type="date" name="date_of_postTest" id="date_of_postTest" required placeholder="تاريخ الاختبار البعدي">
-               <label for="date_of_postTest">تاريخ البعدي</label>
-             </div>
+              <div>
+                <input type="time" name="time_of_postTest" id="time_of_postTest" required>
+                <label for="time_of_postTest">الساعة</label>
+              </div>
+              <div>
+                <input type="time" name="time_of_preTest" id="time_of_preTest" required >
+                <label for="time_of_preTest">الساعة</label>
+              </div>
          </div>
          <input type="hidden" name="_token" value="{{ Session::token() }}">
          <div class="question" >

@@ -84,14 +84,14 @@ input{
 }
  .questions .question .addOptionBtn:hover{
     background-color: var(--gold-color);
-} 
+}
  .questions .question:hover{
     background-color: #454747;
     cursor: pointer;
 }
 .questions .question:hover > .icons{
     visibility:visible ;
-} 
+}
  .questions .question ul{
     list-style: none;
     margin-top: 10px;
@@ -99,7 +99,7 @@ input{
 }
 .questions .question ul li{
     margin-bottom: 5px;
-} 
+}
 .questions .question > input{
     width: 500px;
     border: none;
@@ -222,31 +222,38 @@ ul.options-list li:hover > .fa-xmark{
 
 /* test Information */
 .questions .testInformation{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     justify-content: space-between;
     align-items: center;
-    /* gap: 20px; */
+    gap: 10px;
     background-color: var(--black-color);
 }
 .testInformation div{
-    width: 50%;
     border: 1px solid var(--white-color);
     background-color: var(--black-color);
     border-radius: 10px;
     padding: 10px;
+    margin:10px;
+    color: var(--gold-color);
     gap:10px;
+    font-size: 14px;
     display: flex;
-    align-items: center;     
+    align-items: center;
 }
 .questions .testInformation input{
     background: transparent;
     padding: 8px 10px;
+    height: 40px;
     background-color: var(--white-color);
     z-index: 2;
     cursor: pointer;
     flex-grow: 1;
     border: none;
+}
+.questions .testInformation label{
+    width: 100px;
+    text-align: end;
 }
 #exam_name{
     margin: 20px auto;
@@ -255,6 +262,8 @@ ul.options-list li:hover > .fa-xmark{
     background-color: white;
     border: none;
     outline: none;
+    border:1px solid var(--gold-color);
+    background-color: var(--white-color);
 }
 #exam_name::placeholder{
 float: right;
