@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Exam;
 use App\Models\Trainee;
 use App\Models\ExamResult;
+use App\Models\ExamResultDetails;
 
 class ExamController extends Controller
 {
@@ -57,16 +58,19 @@ class ExamController extends Controller
         $options = ['28','31','32'];
         $data = json_decode($request->exam);
         $user = auth()->user();
+
         $newResult=[];
-        $newResult['trainee_id'] = 12;
-        $newResult['exam_id'] = 48;
+        $newResult['trainee_id'] = $user->trainee->id;
+        $newResult['exam_id'] = $data->exam_id;
         $newResult['exam_status'] ='pre';
         $result = ExamResult::create($newResult);
-        foreach( $options as $option_id){
-            $result->examResiltDetails->create($option_id);
+
+        $newOption = [];
+        $newOption['exam_result_id']=$result->id;
+        foreach($data->options as $option_id){
+            $newOption['option_id']=$option_id;
+            ExamResultDetails::create($newOption);
         }
-        // print_r($testDate->format('h:i')) ;
-        // $options = $request->all();
         return $request->exam;
     }
 }
