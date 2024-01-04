@@ -1,10 +1,13 @@
 @extends('layouts/main')
 @section('content')
 <section class="showExam">
-    <h2 class="examTitle">HTML</h2>
+    <h2 class="examTitle" >HTML</h2>
     {{-- <form action="{{Route('result')}}" method="POST"> --}}
         {{-- @csrf --}}
+        <div id="app">
+        </div>
         <input type="hidden" id="exam_id" value="{{$exam->id}}">
+        <input type="hidden" id="timer" value="{{$timer}}">
     @foreach ($exam->questions as $question)
     <div class="questionContainer">
         <div class="question">
@@ -20,10 +23,15 @@
             </ul>
         </div>
     </div>
-    @endforeach
+        @endforeach
     <button id="saveTest">ارسال</button>
+    <script>
+        window.onload = function(){
+            startTimer();
+            }
+    </script>
 {{-- </form> --}}
-
 </section>
+
 @endsection
 

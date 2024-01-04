@@ -54,9 +54,10 @@
     <script src="{{asset('/assets/js/tether.min.js')}}"></script>
     <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
+    <script src="{{asset('/assets/js/main.js')}}"></script>
 
     <!-- Plugins and scripts required by all views -->
-    <script src="js/libs/Chart.min.js"></script>
+    {{-- <script src="js/libs/Chart.min.js"></script> --}}
 
     <!-- CoreUI main scripts -->
 
@@ -65,7 +66,7 @@
     <!-- Plugins and scripts required by this views -->
     <!-- Custom scripts required by this view -->
     <!-- <script src="js/views/main.js"></script>-->
-    <script src="js/views/charts.js"></script>
+    {{-- <script src="js/views/charts.js"></script> --}}
     <!-- Grunt watch plugin -->
     <script src="//localhost:35729/livereload.js"></script>
 </body>

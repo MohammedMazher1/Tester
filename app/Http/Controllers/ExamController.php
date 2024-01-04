@@ -8,7 +8,7 @@ use App\Models\Exam;
 use App\Models\Trainee;
 use App\Models\ExamResult;
 use App\Models\ExamResultDetails;
-
+use DateTimeImmutable;
 class ExamController extends Controller
 {
     public function index(Request $request)
@@ -47,10 +47,26 @@ class ExamController extends Controller
     }
     public function show(Request $request)
     {
-         $id = 48;
 
-        $exam = Exam::find($id);
-        return view('test.show' , compact('exam'));
+        $storedTime = new DateTimeImmutable('2024-01-04 11:50:00 AM');
+        $serverDateTime = new DateTime();
+        $serverTime = $serverDateTime->format('Y-m-d H:i:s');
+        $currentTime = new DateTimeImmutable($serverTime);
+        $interval = $currentTime->diff($storedTime);
+        // Calculate the interval in minutes
+        $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
+        $exam = Exam::find(48);
+
+        // if (is_string($exam->date_of_preTest)) {
+        //     $examDate = new DateTime($exam->date_of_preTest);
+        // }
+        
+        // $testDate = $exam->date_of_preTest->format('Y-M-D');
+        if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {
+            return view('test.show',compact('exam'))->with('timer',$intervalInMinutes);
+        } else{
+            return "no exam in this time";
+        }
     }
 
     public function result(Request $request){

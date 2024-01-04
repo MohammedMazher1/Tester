@@ -101,5 +101,6 @@
         <!-- end footer  -->
         <script src="{{asset('/assets/lib/jquery-3.7.1.js')}}"></script>
         <script src="{{asset('/assets/js/main.js')}}"></script>
+       
 </body>
 </html>
