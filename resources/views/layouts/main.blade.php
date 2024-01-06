@@ -14,6 +14,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('/assets/css/all.min.css')}}" rel="stylesheet" />
   </head>
 
   <body>
@@ -42,18 +43,49 @@
           id="navbarCollapse"
         >
           <div class="navbar-nav font-weight-bold mx-auto py-0">
-            <a href="index.html" class="nav-item nav-link active">الرئسية</a>
-            <a href="about.html" class="nav-item nav-link">من نحن ؟</a>
-            <a href="class.html" class="nav-item nav-link">خدماتنا</a>
-            <a href="class.html" class="nav-item nav-link">البرامج</a>
-            <a href="contact.html" class="nav-item nav-link">تواصل معنا</a>
+
+            <a href="index.html" class="nav-item nav-link active">
+                <i class="fa fa-home"></i>
+                الرئسية
+            </a>
+            <a href="about.html" class="nav-item nav-link">
+                من نحن ؟
+            </a>
+            <a href="class.html" class="nav-item nav-link">
+                <i class="fa fa-serveces"></i>
+                خدماتنا
+            </a>
+            <a href="class.html" class="nav-item nav-link">
+
+                البرامج
+            </a>
+            <a href="class.html" class="nav-item nav-link">
+                <i class="fa fa-student"></i>
+                مدرب
+            </a>
+            <a href="class.html" class="nav-item nav-link">
+
+                متدرب
+            </a>
+            <a href="contact.html" class="nav-item nav-link">
+                <i class="fa fa-phone"></i>
+                تواصل معنا
+            </a>
           </div>
+          @guest
+          <a href="" class="btn btn-primary px-4">تسجيل الدخول</a>
+          @else
           <a href="" class="btn btn-primary px-5 ml-2" >الإدارة</a>
           <div class="mx-3 text-primary">
             <i class="fa fa-user"></i>
             <span>محمد مزهر عمر </span>
           </div>
-          <a href="" class="btn btn-primary px-4">تسجيل الدخول</a>
+          <form id="logout" action="{{ route('logout') }}" method="POST">
+            <a role="button" class="btn btn-primary px-4"
+            onclick="document.getElementById('logout').submit();">تسجيل الخروج</a>
+            @csrf
+            </form>
+          @endguest
         </div>
       </nav>
     </div>
@@ -193,6 +225,8 @@
       ></a>
 
       <!-- JavaScript Libraries -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
       <script src="{{asset('/assets/lib/easing/easing.min.js')}}"></script>
       <script src="{{asset('/assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
       <script src="{{asset('/assets/lib/isotope/isotope.pkgd.min.js')}}"></script>

@@ -20,11 +20,11 @@
       </div>
       <!-- Header End -->
        <!-- Facilities Start -->
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5 mt-5 mb-5">
       <div class="container pb-3">
-        <div class="position-relative mx-auto" style="width: 150px;">
-          <h2 class="text-center mx-auto pb-3" style="border-bottom: 2px solid var(--primary); width: 150px;" >الخدمات</h2>
-          <span class="  d-block mx-auto rounded-circle position-absolute m-0" style=" width:
+        <div class="position-relative mx-auto mb-5" style="width: 150px;">
+          <h2 class="text-center mx-auto pb-3 " style="border-bottom: 2px solid var(--primary); width: 150px;" >الخدمات</h2>
+          <span class="d-block mx-auto rounded-circle position-absolute m-0" style=" width:
            20px;height: 20px; bottom: 0;left: 50%; border: 2px solid #325662; background-color: #fff;
           transform: translate(-50%,50%);"></span>
         </div>
@@ -67,7 +67,7 @@
     </div>
     <!-- Facilities Start -->
      <!-- About Start -->
-     <div class="container-fluid py-5">
+     <div class="container-fluid py-5 mt-5 mb-5">
       <div class="container">
         <div class="position-relative mx-auto" style="width: 150px;">
           <h2 class="text-center mx-auto pb-3" style="border-bottom: 2px solid var(--primary); width: 150px;" >من نحن ؟</h2>
@@ -164,7 +164,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="{{asset('img/mobileBootcamp.png')}}" alt="" />
+              <img class="card-img-top mb-2" src="{{asset('/assets/img/mobileBootcamp.png')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">مخيم الموبايل</h4>
                 <p class="card-text">
@@ -196,7 +196,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="{{asset('img/desinBootcamp.png')}}" alt="" />
+              <img class="card-img-top mb-2" src="{{asset('/assets/img/desinBootcamp.png')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title"> التصميم</h4>
                 <p class="card-text">
