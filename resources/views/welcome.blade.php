@@ -14,7 +14,7 @@
             <a href="" class="btn btn-secondary mt-1 py-3 px-5 border">المزيد</a>
           </div>
           <div class="col-lg-6 text-center text-lg-right">
-            <img class="img-fluid mt-5" width="592" height="654"  src="img/header.png" alt="" />
+            <img class="img-fluid mt-5" width="592" height="654"  src="{{asset('/assets/img/header.png')}}" alt="" />
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
                   <p>يقوم النظام بشر الامتحان online </p>
                   <p>كما بالإمكان نشر الامتحان على برامج التواصل</p>
               </div>
-              <img  src="img/online.png" alt="">
+              <img  src="{{asset('/assets/img/online.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between">
               <div class="text">
@@ -43,7 +43,7 @@
                 <p>يتيح النظام للأستاذ عملية تخزين الاختيار</p>
                 <p>من خلال هذا العملية يسطيع الأستاذ التعديل علية</p>
               </div>
-              <img  src="img/crop.png" alt="">
+              <img  src="{{asset('/assets/img/crop.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between ">
               <div class="text">
@@ -51,7 +51,7 @@
                 <p>يقوم النظام بنشر الاختبار في الوقت المحدد  </p>
                 <p>ليستطيع جميع المتدربين الإجابة في نفس الوقت</p>
               </div>
-              <img  src="img/prepare.png" alt="">
+              <img  src="{{asset('/assets/img/prepare.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between">
               <div class="text">
@@ -59,7 +59,7 @@
                   <p>يقوم النظام بقراه الأجابات وتصحيحها تلقائيا</p>
                   <p>كما يقوم النظام بالتعرف على الإجابه الصحيحة</p>
               </div>
-              <img  src="img/omr.png" alt="">
+              <img  src="{{asset('/assets/img/omr.png')}}" alt="">
             </div>
 
         </div>
@@ -87,7 +87,7 @@
             </p>
             <div class="row pt-2 pb-4">
               <div class="col-6 col-md-4">
-                <img class="img-fluid rounded"  src="img/about-1.png" alt="" />
+                <img class="img-fluid rounded"  src="{{asset('/assets/img/about-1.png')}}" alt="" />
               </div>
               <div class="col-6 col-md-8">
                 <ul class="list-inline m-0">
@@ -108,7 +108,7 @@
           <div class="col-lg-5">
             <img
               class="img-fluid rounded mb-5 mb-lg-0"
-              src="img/about.png"
+              src="{{asset('/assets/img/about.png')}}"
               alt=""
             />
           </div>
@@ -132,7 +132,7 @@
         <div class="row">
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2 border" src="img/webBootcamp.png" alt="" />
+              <img class="card-img-top mb-2 border" src="{{asset('assets/img/webBootcamp.png')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">مخيم الويب</h4>
                 <p class="card-text">
@@ -164,7 +164,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/mobileBootcamp.png" alt="" />
+              <img class="card-img-top mb-2" src="{{asset('img/mobileBootcamp.png')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title">مخيم الموبايل</h4>
                 <p class="card-text">
@@ -196,7 +196,7 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/desinBootcamp.png" alt="" />
+              <img class="card-img-top mb-2" src="{{asset('img/desinBootcamp.png')}}" alt="" />
               <div class="card-body text-center">
                 <h4 class="card-title"> التصميم</h4>
                 <p class="card-text">

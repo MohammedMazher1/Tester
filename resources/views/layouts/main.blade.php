@@ -27,7 +27,7 @@
           class="navbar-brand font-weight-bold text-secondary d-flex justify-content-center align-item-center"
           style="font-size: 50px"
         >
-            <img class="logo" src="img/logo.png" alt="">
+            <img class="logo" src="{{asset('/assets/img/logo.png')}}" alt="">
         </a>
         <button
           type="button"
@@ -68,7 +68,7 @@
         <div class="row pt-5">
           <div class="col-lg-3 col-md-6 mb-5 d-flex justify-content-center align-item-start flex-column">
             <a href="" class="text-right">
-              <img src="img/whitelogo.png" class="w-75" alt="logo">
+              <img src="{{asset('/assets/img/whitelogo.png')}}" class="w-75" alt="logo">
             </a>
             <p class="text-right">
               عناويننا على مواقع التواصل لا تتردد في التواصل معنا والاستفسار سيتم الرد على استفساراتكم خلال 24 ساعة
