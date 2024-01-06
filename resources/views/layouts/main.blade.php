@@ -60,11 +60,11 @@
                 البرامج
             </a>
             <a href="class.html" class="nav-item nav-link">
-                <i class="fa fa-student"></i>
+                <i class="fa-solid fa-chalkboard-user"></i>
                 مدرب
             </a>
             <a href="class.html" class="nav-item nav-link">
-
+                <i class="fa-solid fa-school"></i>
                 متدرب
             </a>
             <a href="contact.html" class="nav-item nav-link">
@@ -78,7 +78,7 @@
           <a href="" class="btn btn-primary px-5 ml-2" >الإدارة</a>
           <div class="mx-3 text-primary">
             <i class="fa fa-user"></i>
-            <span>محمد مزهر عمر </span>
+            <span>محمد مزهر عمر بافرج</span>
           </div>
           <form id="logout" action="{{ route('logout') }}" method="POST">
             <a role="button" class="btn btn-primary px-4"
