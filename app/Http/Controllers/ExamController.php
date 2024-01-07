@@ -15,13 +15,16 @@ class ExamController extends Controller
 {
     public function index(Request $request)
     {
-        // $viewData = [];
-        // $viewData["data"] = $request->all();
         $user = '';
         if(Auth::check()){
             $user = auth()->user();
         }
-        return view('exam.newTest',compact('user'));
+        return view('exam.index',compact('user'));
+    }
+    public function create()
+    {
+
+        return view("exam.create");
     }
     public function store(Request $request){
         $user = auth()->user();

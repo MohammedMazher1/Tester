@@ -1,3 +1,5 @@
+/* trainer page */
+
 let questionNo = 4;
 let optionNo = 4;
 $("#submitTest").click(function() {
@@ -32,26 +34,37 @@ $("#submitTest").click(function() {
         quizArray.push(questionObject);
     });
     console.log(quizArray);
-    // var token = $("input[name='_token']").val();
+    var token = $("input[name='_token']").val();
 
     // Send the quizArray to the Laravel route using AJAX
-    // $.ajax({
-    //     url: 'http://127.0.0.1:8000/exam', // Replace with the actual route URL
-    //     type: 'POST',
-    //     data: {
-    //         "_token":token,
-    //         quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
-    //     success: function(response) {
-    //         // Handle the server's response if needed
-    //         document.write(response);
-    //     },
-    //     error: function(error) {
-    //         // Handle errors if any
-    //         console.log("Error submitting quiz:");
-    //     }
-    // });
+    $.ajax({
+        url: 'http://127.0.0.1:8000/exams', // Replace with the actual route URL
+        type: 'POST',
+        data: {
+            "_token":token,
+            quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
+        success: function(response) {
+            // Handle the server's response if needed
+            document.write(response);
+        },
+        error: function(error) {
+            // Handle errors if any
+            console.log("Error submitting quiz:");
+
+            $('#error').append(error);
+        }
+    });
 });
 
+$('.newExam').css('transition','all 0.7s ')
+$(".newExam1").hover(function() {
+    $(this).toggleClass('newExam2');
+    $(this).next().toggleClass('newExam2');
+});
+$(".newExam2").hover(function() {
+    $(this).toggleClass('newExam2');
+    $(this).prev().toggleClass('newExam2');
+});
 
 $("#addQuestion").click(function(){
 $('.questions').append(
@@ -241,7 +254,7 @@ function startTimer() {
 
     if (timeLeft === 0) {
       onTimesUp();
-    
+
     }
   }, 1000);
 }
@@ -290,3 +303,4 @@ function setCircleDasharray() {
     .setAttribute("stroke-dasharray", circleDasharray);
 }
 /* end timat java */
+

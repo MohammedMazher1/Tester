@@ -10010,3 +10010,16 @@ ul.options-list li:hover > .fa-xmark{
   transition: all 0.3s ease;
   color: #fff;
 }
+.newExam{
+    transition: all 0.5s ease;
+    font-weight: bold;
+  }
+  .newExam1 {
+    background-color: #fff;
+    color: var(--primary);
+  }
+
+  .newExam2{
+    background-color: var(--primary);
+    color: #fff;
+  }

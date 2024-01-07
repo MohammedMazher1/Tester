@@ -1,3 +1,6 @@
+@php
+    $user = Session()->get('user');
+@endphp
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
   <head>
@@ -41,7 +44,7 @@
           id="navbarCollapse">
           <div class="navbar-nav font-weight-bold mx-auto py-0">
 
-            <a href="index.html" class="nav-item nav-link active">
+            <a href="/" class="nav-item nav-link active">
                 <i class="fa fa-home"></i>
                 الرئسية
             </a>
@@ -57,7 +60,7 @@
               <i class="fa-solid fa-folder-open"></i>
                 البرامج
             </a>
-            <a href="{{Route('exam')}}" class="nav-item nav-link">
+            <a href="{{Route('exams.index')}}" class="nav-item nav-link">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 مدرب
             </a>

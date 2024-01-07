@@ -2,8 +2,10 @@
 @section('content')
   <!-- exam Start -->
   <div class="container-fluid py-5">
+    <div id="error" class="danger"></div>
     <div class="container questions">
         <div>
+            <input type="hidden" name="_token" id="token" value="{{csrf_token()}}">
             <input type="text" class="form-control w-50 mx-auto px-5" id="exam_name" required placeholder="اسم الاختبار">
             <div class="row row-cols-1 row-cols-md-3 justify-content-around  gap-3">
                 <div class="form-group  row row-cols-1 gap-3 text-right rounded  text-white  p-2 position-relative mt-4 bg-primary">

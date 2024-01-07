@@ -6,6 +6,7 @@ use App\Http\Controllers\ExamController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ProgramController;
 use App\Models\Program;
 
@@ -21,16 +22,16 @@ use App\Models\Program;
 */
 
 Route::get('/', function () {
-    $user = '';
-    if(Auth::check()){
-        $user = auth()->user();
+    if(Auth::user()){
+        $user = Auth::user();
+        Session::put('user', $user);
     }
-    return view('welcome', compact('user'));
+
+    return view('welcome');
 })->name('index');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/show',[ExamController::class,'show'])->name('show');
-    Route::post('/exam',[ExamController::class,'store'])->name('exam');
+    Route::resource('exams',ExamController::class);
     Route::post('/result',[ExamController::class,'result'])->name('result');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
 });
