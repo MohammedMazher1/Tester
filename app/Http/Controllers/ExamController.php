@@ -8,6 +8,8 @@ use App\Models\Exam;
 use App\Models\Trainee;
 use App\Models\ExamResult;
 use App\Models\ExamResultDetails;
+use Illuminate\Support\Facades\Auth;
+
 use DateTimeImmutable;
 class ExamController extends Controller
 {
@@ -15,7 +17,11 @@ class ExamController extends Controller
     {
         // $viewData = [];
         // $viewData["data"] = $request->all();
-        return view('exam.newTest');
+        $user = '';
+        if(Auth::check()){
+            $user = auth()->user();
+        }
+        return view('exam.newTest',compact('user'));
     }
     public function store(Request $request){
         $user = auth()->user();
@@ -48,7 +54,7 @@ class ExamController extends Controller
     public function show(Request $request)
     {
 
-        $storedTime = new DateTimeImmutable('2024-01-04 11:50:00 AM');
+        $storedTime = new DateTimeImmutable('2024-01-04 2:10:00 AM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);

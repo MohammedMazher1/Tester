@@ -57,7 +57,7 @@
               <i class="fa-solid fa-folder-open"></i>
                 البرامج
             </a>
-            <a href="class.html" class="nav-item nav-link">
+            <a href="{{Route('exam')}}" class="nav-item nav-link">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 مدرب
             </a>
