@@ -1,4 +1,6 @@
-
+@php
+    $loginedUser = Session()->get('user');
+@endphp
 <!DOCTYPE html>
 <html lang="IR-fa" dir="rtl">
 
@@ -23,19 +25,26 @@
 <body class="navbar-fixed sidebar-nav fixed-nav">
 
     <header class="navbar">
-        <div class="container-flHuid">
+        <div class="container-flHuid d-flex justify-center">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="#">
                 <img  src="{{asset('assets/img/whitelogo.png')}}" alt="logo">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item p-x-1">
-                    <a class="nav-link" href="{{Route('admin')}}"><i class="fa-solid fa-arrow-right border"></i></a>
+                    <a class="nav-link" href="{{Route('admin')}}">
+                        <i class="fa-solid fa-arrow-right margin-0" style="font-size: 20px; margin:0">
+                        </i>
+                    </a>
                 </li>
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
                 </li>
             </ul>
+            <div class="mx-3" style="display:flex; gap:5px ; color:#fff ; justify-content:flex-end; margin-left:50px; align-items:center; ">
+                <i class="fa fa-user"></i>
+                <span>{{$loginedUser->name}}</span>
+            </div>
         </div>
     </header>
     @yield('content')

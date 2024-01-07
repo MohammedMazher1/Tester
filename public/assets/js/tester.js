@@ -49,8 +49,8 @@ $("#submitTest").click(function() {
         },
         error: function(error) {
             // Handle errors if any
-            console.log("Error submitting quiz:");
-
+            console.log("Error submitting quiz:"+ error);
+            createImageBitmap
             $('#error').append(error);
         }
     });

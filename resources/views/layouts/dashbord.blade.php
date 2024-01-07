@@ -1,4 +1,6 @@
-
+@php
+    $user = Session()->get('user');
+@endphp
 <!DOCTYPE html>
 <html lang="IR-fa" dir="rtl">
 
@@ -45,7 +47,7 @@
             </ul>
             <div class="mx-3" style="display:flex; gap:5px ; color:#fff ; justify-content:flex-end; margin-left:50px; align-items:center; ">
                 <i class="fa fa-user"></i>
-                <span>محمد مزهر عمر بافرج</span>
+                <span>{{$user->name}}</span>
             </div>
         </div>
     </header>

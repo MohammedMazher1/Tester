@@ -52,7 +52,7 @@ class ExamController extends Controller
             }
         };
 
-        return  view('exam.newTest');
+        return  view('exam.index');
     }
     public function show(Request $request)
     {
