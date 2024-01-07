@@ -21,8 +21,7 @@
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
       <nav
-        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
-      >
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
         <a
           href=""
           class="navbar-brand font-weight-bold text-secondary d-flex justify-content-center align-item-center"
@@ -38,10 +37,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarCollapse"
-        >
+        <div class="collapse navbar-collapse justify-content-between small"
+          id="navbarCollapse">
           <div class="navbar-nav font-weight-bold mx-auto py-0">
 
             <a href="index.html" class="nav-item nav-link active">
@@ -49,14 +46,15 @@
                 الرئسية
             </a>
             <a href="about.html" class="nav-item nav-link">
+              <i class="fa-regular fa-address-card"></i>
                 من نحن ؟
             </a>
             <a href="class.html" class="nav-item nav-link">
-                <i class="fa fa-serveces"></i>
+              <i class="fa-solid fa-gears"></i>
                 خدماتنا
             </a>
             <a href="class.html" class="nav-item nav-link">
-
+              <i class="fa-solid fa-folder-open"></i>
                 البرامج
             </a>
             <a href="class.html" class="nav-item nav-link">
@@ -73,9 +71,9 @@
             </a>
           </div>
           @guest
-          <a href="" class="btn btn-primary px-4">تسجيل الدخول</a>
+          <a href="" class="btn btn-primary px-4 ">تسجيل الدخول</a>
           @else
-          <a href="" class="btn btn-primary px-5 ml-2" >الإدارة</a>
+          <a href="" class="btn btn-primary px-5 ml-2 " >الإدارة</a>
           <div class="mx-3 text-primary">
             <i class="fa fa-user"></i>
             <span>محمد مزهر عمر بافرج</span>

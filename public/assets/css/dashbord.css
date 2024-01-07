@@ -7,6 +7,11 @@ html {
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --black-color:#325662;
+    --gold-color:#00394f;
+    --white-color:#fff;
+}
 body {
   margin: 0; }
 
