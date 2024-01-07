@@ -15,7 +15,7 @@ class ExamController extends Controller
     {
         // $viewData = [];
         // $viewData["data"] = $request->all();
-        return view('test.newTest');
+        return view('exam.newTest');
     }
     public function store(Request $request){
         $user = auth()->user();
@@ -43,7 +43,7 @@ class ExamController extends Controller
             }
         };
 
-        return  view('test.newTest');
+        return  view('exam.newTest');
     }
     public function show(Request $request)
     {
@@ -60,7 +60,7 @@ class ExamController extends Controller
         // if (is_string($exam->date_of_preTest)) {
         //     $examDate = new DateTime($exam->date_of_preTest);
         // }
-        
+
         // $testDate = $exam->date_of_preTest->format('Y-M-D');
         if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {
             return view('test.show',compact('exam'))->with('timer',$intervalInMinutes);
