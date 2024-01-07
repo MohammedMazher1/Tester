@@ -1,4 +1,16 @@
-/*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
+@font-face {
+    font-family:'mainFont';
+    src: url(../fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf);
+  }
+  @font-face {
+    font-family:'primaryFont';
+    src: url(../fonts/DroidKufi-Regular.ttf);
+  }
+  @font-face {
+    font-family:'secoundryFont';
+    src: url(../fonts/Agbalumo-Regular.ttf);
+  }
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
@@ -2847,13 +2859,13 @@ input[type="button"].btn-block {
   margin-right: 1rem; }
 
 .navbar-light .navbar-brand {
-  color: var(--gold-color); }
+  color: var(--white-color); }
   .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: var(--gold-color); }
+    color:var(--white-color); }
 .navbar-light .navbar-nav .nav-link {
-  color: var(--gold-color); }
+  color: var(--white-color); }
   .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: var(--gold-color); }
+    color: var(--white-color); }
 .navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .nav-link:hover,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link:focus,
@@ -2864,7 +2876,7 @@ input[type="button"].btn-block {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.active:focus,
 .navbar-light .navbar-nav .nav-link.active:hover {
-  color: var(--gold-color); }
+  color: var(--white-color); }
 .navbar-light .navbar-divider {
   background-color: rgba(0, 0, 0, 0.075); }
 
@@ -4974,9 +4986,9 @@ header.navbar .navbar-nav .nav-link {
     color: var(--gold-color); }
 
 .navbar-nav .nav-link {
-  color: var(--gold-color); }
+  color: var(--white-color) }
   .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
-    color: var(--gold-color); }
+    color:var(--white-color); }
 .navbar-nav .open > .nav-link, .navbar-nav .open > .nav-link:focus, .navbar-nav .open > .nav-link:hover,
 .navbar-nav .active > .nav-link,
 .navbar-nav .active > .nav-link:focus,
@@ -4987,7 +4999,7 @@ header.navbar .navbar-nav .nav-link {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.active:focus,
 .navbar-nav .nav-link.active:hover {
-  color: var(--gold-color); }
+  color:var(--white-color); }
 
 .navbar-divider {
   background-color: rgba(0, 0, 0, 0.075); }
@@ -5980,10 +5992,10 @@ footer.footer {
   padding: 0 16px;
   padding: 0 1rem;
   line-height: 50px;
-  color: var(--gold-color);
+  color: var(--white-color);
   background: var(--black-color);
-  border-top: 1px solid #cfd8dc; }
-
+  border-radius: 0 25px 0 0 ;
+}
 .btn-transparent {
   color: var(--white-color);
   background-color: transparent;
@@ -7739,3 +7751,7 @@ base-chart.chart {
     border: navajowhite;
     font-size: 16px;
 }
+.border {
+    border: 1px solid #fff !important;
+    padding:2px  5px;
+  }

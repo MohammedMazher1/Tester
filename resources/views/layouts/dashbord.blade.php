@@ -27,7 +27,7 @@
         <div class="container-flHuid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="#">
-                {{-- <img  src="{{asset('assets/img/logo.png')}}" alt=""> --}}
+                <img  src="{{asset('assets/img/whitelogo.png')}}" alt="logo">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
@@ -43,6 +43,10 @@
                     <a class="nav-link" href="#">الاعدادات</a>
                 </li>
             </ul>
+            <div class="mx-3" style="display:flex; gap:5px ; color:#fff ; justify-content:flex-end; margin-left:50px; align-items:center; ">
+                <i class="fa fa-user"></i>
+                <span>محمد مزهر عمر بافرج</span>
+            </div>
         </div>
     </header>
     <div class="sidebar">
@@ -91,7 +95,7 @@
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
 
     <!-- Plugins and scripts required by all views -->
-    <script src="js/libs/Chart.min.js"></script>
+    {{-- <script src="js/libs/Chart.min.js"></script> --}}
 
     <!-- CoreUI main scripts -->
 
@@ -100,16 +104,16 @@
     <!-- Plugins and scripts required by this views -->
     <!-- Custom scripts required by this view -->
     <!-- <script src="js/views/main.js"></script>-->
-    <script src="js/views/charts.js"></script>
+    {{-- <script src="js/views/charts.js"></script> --}}
     <!-- Grunt watch plugin -->
-    <script src="//localhost:35729/livereload.js"></script>
+    {{-- <script src="//localhost:35729/livereload.js"></script> --}}
 </body>
 
 </html>
 
 <footer class="footer">
     <span class="text-left">
-        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023.
+        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023
     </span>
 
 </footer>

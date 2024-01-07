@@ -73,7 +73,7 @@
           @guest
           <a href="" class="btn btn-primary px-4 ">تسجيل الدخول</a>
           @else
-          <a href="" class="btn btn-primary px-5 ml-2 " >الإدارة</a>
+          <a href="{{Route('admin')}}" class="btn btn-primary px-5 ml-2 " >الإدارة</a>
           <div class="mx-3 text-primary">
             <i class="fa fa-user"></i>
             <span>محمد مزهر عمر بافرج</span>

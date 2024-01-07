@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}"> --}}
-     <link href="{{asset('/assets/css/simple-line-icons.css')}}" rel="stylesheet">
     <!-- Main styles for this application -->
     <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
 </head>
@@ -27,17 +26,14 @@
         <div class="container-flHuid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
             <a class="navbar-brand" href="#">
-                {{-- <img  src="{{asset('/assets/img/logo.png')}}" alt=""> --}}
+                <img  src="{{asset('assets/img/whitelogo.png')}}" alt="logo">
             </a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item p-x-1">
+                    <a class="nav-link" href="{{Route('admin')}}"><i class="fa-solid fa-arrow-right border"></i></a>
+                </li>
+                <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
-                </li>
-                <li class="nav-item p-x-1">
-                    <a class="nav-link" href="{{Route('users.index')}}">المستخدمين</a>
-                </li>
-                <li class="nav-item p-x-1">
-                    <a class="nav-link" href="#">الاعدادات</a>
                 </li>
             </ul>
         </div>
@@ -75,7 +71,7 @@
 
 <footer class="footer">
     <span class="text-left">
-        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023.
+        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023
     </span>
 
 </footer>
