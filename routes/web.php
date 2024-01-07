@@ -21,7 +21,11 @@ use App\Models\Program;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = '';
+    if(Auth::check()){
+        $user = auth()->user();
+    }
+    return view('welcome', compact('user'));
 })->name('index');
 
 Route::group(['middleware' => ['auth']], function () {

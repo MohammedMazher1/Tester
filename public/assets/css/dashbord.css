@@ -2113,8 +2113,8 @@ fieldset[disabled] a.btn {
 
 .btn-danger {
   color: var(--white-color);
-  background-color: var(--white-color);
-  border-color: #f86c6b; }
+  background-color: #325662;
+  border-color: var(--white-color); }
   .btn-danger:hover {
     color: var(--white-color);
     background-color: #f63c3a;

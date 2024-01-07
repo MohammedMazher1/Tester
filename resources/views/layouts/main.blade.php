@@ -71,12 +71,17 @@
             </a>
           </div>
           @guest
-          <a href="" class="btn btn-primary px-4 ">تسجيل الدخول</a>
+          <a href="{{Route('login')}}" class="btn btn-primary px-4 ">تسجيل الدخول</a>
           @else
+          @if ($user->type == 'admin')
           <a href="{{Route('admin')}}" class="btn btn-primary px-5 ml-2 " >الإدارة</a>
+          @endif
           <div class="mx-3 text-primary">
+            {{-- @isset($user)
+
+            @endisset --}}
             <i class="fa fa-user"></i>
-            <span>محمد مزهر عمر بافرج</span>
+            <span>{{$user->name}}</span>
           </div>
           <form id="logout" action="{{ route('logout') }}" method="POST">
             <a role="button" class="btn btn-primary px-4"
