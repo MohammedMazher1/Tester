@@ -60,7 +60,7 @@
               <i class="fa-solid fa-folder-open"></i>
                 البرامج
             </a>
-            <a href="{{Route('exams.index')}}" class="nav-item nav-link">
+            <a href="{{Route('exams.home')}}" class="nav-item nav-link">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 مدرب
             </a>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Exam;
+use App\Models\User;
 use App\Models\Trainee;
 use App\Models\ExamResult;
 use App\Models\ExamResultDetails;
@@ -13,13 +14,13 @@ use Illuminate\Support\Facades\Auth;
 use DateTimeImmutable;
 class ExamController extends Controller
 {
-    public function index(Request $request)
+    public function home(Request $request)
     {
         $user = '';
         if(Auth::check()){
             $user = auth()->user();
         }
-        return view('exam.index',compact('user'));
+        return view('exam.home',compact('user'));
     }
     public function create()
     {
@@ -52,12 +53,33 @@ class ExamController extends Controller
             }
         };
 
-        return  view('exam.index');
+        return  view('exam.home');
+    }
+
+    public function index()
+    {
+        // $id = auth()->user()->trainer->id;
+        $exams = Exam::where("trainer_id",6)->get();
+        // return $exams[0]->name;
+        return view("exam.index", compact("exams"));
+    }
+
+    public function edit(string $id)
+    {
+        $exam = Exam::find($id);
+
+        return view("exam.edit", compact("exam"));
+    }
+    public function update(Request $request, string $id)
+    {
+        $user = User::find($id);
+
+        return view("user.edit", compact("user"));
     }
     public function show(Request $request)
     {
 
-        $storedTime = new DateTimeImmutable('2024-01-04 2:10:00 AM');
+        $storedTime = new DateTimeImmutable('2024-01-08 2:10:00 AM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);
@@ -66,9 +88,9 @@ class ExamController extends Controller
         $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
         $exam = Exam::find(48);
 
-        // if (is_string($exam->date_of_preTest)) {
-        //     $examDate = new DateTime($exam->date_of_preTest);
-        // }
+        if (is_string($exam->date_of_preTest)) {
+            $examDate = new DateTime($exam->date_of_preTest);
+        }
 
         // $testDate = $exam->date_of_preTest->format('Y-M-D');
         if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {

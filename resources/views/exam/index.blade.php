@@ -1,21 +1,46 @@
 @extends('layouts.main')
+
 @section('content')
-<!-- exam Start -->
-<div class="container-fluid py-5">
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 text-center text-primary justify-content-center align-item-center gap-3 mt-5 " style="cursor: pointer;">
-            <div class="col shadow p-5 newExam newExam1" onclick="document.getElementById('examForm').submit();">
-                <p>إنشاء اختبار جديد</p>
-                <i class="fa-regular fa-file" style="font-size: 50px;"></i>
-            </div>
-                <div class="col shadow p-5 newExam newExam2" >
-                    <p>اختبار موجود مسبقاً</p>
-                    <i class="fa-solid fa-book-open " style="font-size: 50px;"></i>
+<div>
+    <div class="row">
+
+        <div class="col-lg-12 small" style="text-align: start">
+            <div class="card" style="margin-top: 5%">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i>  اختباراتي
                 </div>
-            <form action="{{Route('exams.create')}}" method="GET" id="examForm">
-            </form>
+                <div class="card-block">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>اسم الاختبار</th>
+                                <th>تاريخ الإنشاء</th>
+                                <th>تاريخ التعديل</th>
+                                <th>عدد الاسئلة</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($exams as $exam)
+                            <tr>
+                                <td>{{$exam['name']}}</td>
+                                <td>{{$exam['created_at']}}</td>
+                                <td>{{$exam['updated_at']}}</td>
+                                <td>{{$exam->questions->count()}}</td>
+                                <td>
+                                    <form style="display: inline" style="padding-right: 10px;color: red;" action="{{Route('exams.edit',$exam['id'])}}" method="GET"><button class="dashbordButton border-0"><i class="fa-regular fa-pen-to-square"></i></button></form>
+                                    <span> | </span>
+                                    <form style="display: inline" style="padding-left: 10px; color: rgb(23, 159, 238);" action="{{Route('exams.destroy',$exam['id'])}}" method="POST">@method('DELETE')@csrf<button class="dashbordButton border-0" style="color: red"><i class="fa-solid fa-trash-can"></i></button></form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div >
+                <a href="{{Route('exams.create')}}" class="createexam" class="btn btn-sm btn-primary"><i class="fa fa-exam-plus"></i>تعديل</a>
         </div>
+
     </div>
-  </div>
-  <!-- exam End -->
+</div>
 @endsection

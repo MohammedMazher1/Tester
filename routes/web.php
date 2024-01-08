@@ -31,6 +31,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('exams.home',[ExamController::class,'home'] )->name('exams.home');
     Route::resource('exams',ExamController::class);
     Route::post('/result',[ExamController::class,'result'])->name('result');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
