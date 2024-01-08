@@ -79,15 +79,17 @@ class ExamController extends Controller
     public function show()
     {
 
-        $storedTime = new DateTimeImmutable('2024-01-08 11:35:00 AM');
+        $storedTime = new DateTimeImmutable('2024-01-08 1:50:00 PM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);
         $interval = $currentTime->diff($storedTime);
         // Calculate the interval in minutes
         $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
-        return $intervalInMinutes;
-        // $exam = Exam::find(48);
+        // return $interval->i;
+        $exam = Exam::find(77);
+
+        return view('exam.show', compact('exam'))->with('timer',$interval->i);
 
         // if (is_string($exam->date_of_preTest)) {
         //     $examDate = new DateTime($exam->date_of_preTest);
