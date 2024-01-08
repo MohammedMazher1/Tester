@@ -2947,8 +2947,8 @@ input[type="button"].btn-block {
 .card-block {
   padding: 20px;
   padding: 1.25rem;
-  /* background-color: var(--black-color); */
-  color: var(--white-color);
+  background-color: #e4e5e6;
+  color: var(--gold-color);
 }
   .card-block::after {
     content: "";
@@ -2976,7 +2976,8 @@ input[type="button"].btn-block {
 .card-header {
   padding: 12px 20px;
   padding: 0.75rem 1.25rem;
-  background-color: #eceff1;
+  background-color: var(--primary-color);
+  color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   .card-header::after {
     content: "";
@@ -4963,7 +4964,6 @@ header.navbar {
     padding: 8px 16px;
     padding: 0.5rem 1rem;
     background-color: var(--black-color);
-    background-image: url("../img/coreui-logotyp.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 70px auto;
