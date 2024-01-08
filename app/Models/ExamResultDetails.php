@@ -11,7 +11,6 @@ class ExamResultDetails extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'exam_result_id',
         'option_id',
     ];
     public function examResult(): BelongsTo
