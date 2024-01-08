@@ -24,14 +24,16 @@ use App\Models\Program;
 
 
 Route::get('/',[HomeController::class,'index'])->name('index');
-
-Route::group(['middleware' => ['auth']], function () {
+Route::middleware('trainer')->group(function () {
     Route::get('exams.home',[ExamController::class,'home'] )->name('exams.home');
     Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
     Route::resource('exams',ExamController::class);
     Route::post('/result',[ExamController::class,'result'])->name('result');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
 });
+// Route::group(['middleware' => ['auth']], function () {
+
+// });
 
 Route::middleware('admin')->group(function () {
     Route::get('admin', function () {

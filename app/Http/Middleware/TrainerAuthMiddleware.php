@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 
-class AdminAuthMiddleware
+
+class TrainerAuthMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,12 +17,10 @@ class AdminAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        if (Auth::user() && Auth::user()->type == 'admin') {
+        if (Auth::user() && Auth::user()->type == 'trainer') {
             return $next($request);
             } else {
             return redirect()->route('index');
             }
-
     }
 }
