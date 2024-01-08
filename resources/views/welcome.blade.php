@@ -20,7 +20,7 @@
       </div>
       <!-- Header End -->
        <!-- Facilities Start -->
-    <div class="container-fluid pt-5 mt-5 mb-5">
+    <div class="container-fluid pt-5 mt-5 mb-5" id="services">
       <div class="container pb-3">
         <div class="position-relative mx-auto mb-5" style="width: 150px;">
           <h2 class="text-center mx-auto pb-3 " style="border-bottom: 2px solid var(--primary); width: 150px;" >الخدمات</h2>
@@ -67,7 +67,7 @@
     </div>
     <!-- Facilities Start -->
      <!-- About Start -->
-     <div class="container-fluid py-5 mt-5 mb-5">
+     <div class="container-fluid py-5 mt-5 mb-5" id="about-us">
       <div class="container">
         <div class="position-relative mx-auto" style="width: 150px;">
           <h2 class="text-center mx-auto pb-3" style="border-bottom: 2px solid var(--primary); width: 150px;" >من نحن ؟</h2>
@@ -118,7 +118,7 @@
     <!-- About End -->
 
      <!-- programs Start -->
-     <div class="container-fluid pt-5">
+     <div class="container-fluid pt-5" id="programs">
       <div class="container">
         <div class="text-center pb-2">
           <div class="position-relative mx-auto" style="width: 150px;">

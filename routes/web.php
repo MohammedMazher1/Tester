@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Exam;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
@@ -21,17 +22,12 @@ use App\Models\Program;
 |
 */
 
-Route::get('/', function () {
-    if(Auth::user()){
-        $user = Auth::user();
-        Session::put('user', $user);
-    }
 
-    return view('welcome');
-})->name('index');
+Route::get('/',[HomeController::class,'index'])->name('index');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('exams.home',[ExamController::class,'home'] )->name('exams.home');
+    Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
     Route::resource('exams',ExamController::class);
     Route::post('/result',[ExamController::class,'result'])->name('result');
     Route::get('/exam',[ExamController::class,'index'])->name('exam');

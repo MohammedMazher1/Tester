@@ -48,15 +48,15 @@
                 <i class="fa fa-home"></i>
                 الرئسية
             </a>
-            <a href="about.html" class="nav-item nav-link">
+            <a href="#about-us" class="nav-item nav-link">
               <i class="fa-regular fa-address-card"></i>
                 من نحن ؟
             </a>
-            <a href="class.html" class="nav-item nav-link">
+            <a href="#services" class="nav-item nav-link">
               <i class="fa-solid fa-gears"></i>
                 خدماتنا
             </a>
-            <a href="class.html" class="nav-item nav-link">
+            <a href="#programs" class="nav-item nav-link">
               <i class="fa-solid fa-folder-open"></i>
                 البرامج
             </a>
@@ -64,11 +64,11 @@
                 <i class="fa-solid fa-chalkboard-user"></i>
                 مدرب
             </a>
-            <a href="class.html" class="nav-item nav-link">
+            <a href="{{Route('exam.show')}}" class="nav-item nav-link">
                 <i class="fa-solid fa-school"></i>
                 متدرب
             </a>
-            <a href="contact.html" class="nav-item nav-link">
+            <a href="#footer" class="nav-item nav-link">
                 <i class="fa fa-phone"></i>
                 تواصل معنا
             </a>
@@ -102,7 +102,7 @@
         </main>
         <!-- end main -->
             <!-- Footer Start -->
-    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5" id="footer">
         <div class="row pt-5">
           <div class="col-lg-3 col-md-6 mb-5 d-flex justify-content-center align-item-start flex-column">
             <a href="" class="text-right">

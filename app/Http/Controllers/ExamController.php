@@ -76,28 +76,29 @@ class ExamController extends Controller
 
         return view("user.edit", compact("user"));
     }
-    public function show(Request $request)
+    public function show()
     {
 
-        $storedTime = new DateTimeImmutable('2024-01-08 2:10:00 AM');
+        $storedTime = new DateTimeImmutable('2024-01-08 11:35:00 AM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);
         $interval = $currentTime->diff($storedTime);
         // Calculate the interval in minutes
         $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
-        $exam = Exam::find(48);
+        return $intervalInMinutes;
+        // $exam = Exam::find(48);
 
-        if (is_string($exam->date_of_preTest)) {
-            $examDate = new DateTime($exam->date_of_preTest);
-        }
+        // if (is_string($exam->date_of_preTest)) {
+        //     $examDate = new DateTime($exam->date_of_preTest);
+        // }
 
         // $testDate = $exam->date_of_preTest->format('Y-M-D');
-        if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {
-            return view('test.show',compact('exam'))->with('timer',$intervalInMinutes);
-        } else{
-            return "no exam in this time";
-        }
+        // if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {
+        //     return view('test.show',compact('exam'))->with('timer',$intervalInMinutes);
+        // } else{
+        //     return "no exam in this time";
+        // }
     }
 
     public function result(Request $request){
