@@ -162,27 +162,27 @@ $("#saveTest").click(function() {
 
     // Display the quiz array in the console (you can replace this with your desired logic)
     console.log("Quiz Array:", exam);
-    // var token = $("input[name='_token']").val();
-    // $.ajax({
-    //     url: 'http://127.0.0.1:8000/result', // Replace with the actual route URL
-    //     type: 'POST',
-    //     headers: {
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         }
-    //     },
-    //     data: {
-    //         "_token":token,
-    //          exam: JSON.stringify(exam) }, // Send the quizArray as JSON string
-    //     success: function(response) {
-    //         // Handle the server's response if needed
-    //         document.write(response);
-    //     },
-    //     error: function(error) {
-    //         // Handle errors if any
-    //         console.log("Error submitting quiz:");
-    //     }
-    // });
+    var token = $("input[name='_token']").val();
+    $.ajax({
+        url: 'http://127.0.0.1:8000/result', // Replace with the actual route URL
+        type: 'POST',
+        headers: {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        },
+        data: {
+            "_token":token,
+             exam: JSON.stringify(exam) }, // Send the quizArray as JSON string
+        success: function(response) {
+            // Handle the server's response if needed
+            document.write(response);
+        },
+        error: function(error) {
+            // Handle errors if any
+            console.log("Error submitting quiz:");
+        }
+    });
 });
 
 

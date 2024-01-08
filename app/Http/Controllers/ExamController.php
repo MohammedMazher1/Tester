@@ -79,7 +79,7 @@ class ExamController extends Controller
     public function show()
     {
 
-        $storedTime = new DateTimeImmutable('2024-01-08 1:50:00 PM');
+        $storedTime = new DateTimeImmutable('2024-01-08 6:58:00 PM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);
@@ -105,7 +105,6 @@ class ExamController extends Controller
 
     public function result(Request $request){
         // $testDate = new DateTime('2024-01-03 21:30:00');
-        $options = ['28','31','32'];
         $data = json_decode($request->exam);
         $user = auth()->user();
 
@@ -114,13 +113,14 @@ class ExamController extends Controller
         $newResult['exam_id'] = $data->exam_id;
         $newResult['exam_status'] ='pre';
         $result = ExamResult::create($newResult);
-
-        $newOption = [];
-        $newOption['exam_result_id']=$result->id;
+        $result->save();
+        $options = [];
+        // $newOption['exam_result_id']=$result->id;
         foreach($data->options as $option_id){
-            $newOption['option_id']=$option_id;
-            ExamResultDetails::create($newOption);
+            $options= ["option_id"=>$option_id];
         }
+        $result->examResultDetails()->createMany($options);
+        // ExamResultDetails::create($newOption);
         return $request->exam;
     }
 }

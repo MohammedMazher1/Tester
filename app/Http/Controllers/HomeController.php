@@ -12,10 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -24,10 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()){
+        Auth::user();
         $user = Auth::user();
         Session::put('user', $user);
-        }
-        return view('welcome')->with('user',$user);
+
+        return view('welcome');
     }
 }

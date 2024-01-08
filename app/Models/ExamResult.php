@@ -23,7 +23,7 @@ class ExamResult extends Model
     {
         return $this->belongsTo(Exam::class);
     }
-    public function examResiltDetails(): HasMany
+    public function examResultDetails(): HasMany
     {
         return $this->hasMany(ExamResultDetails::class);
     }
