@@ -2,7 +2,7 @@
 @section('content')
       <!-- Header Start -->
       <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
-        <div class="row align-items-center px-3">
+        <div class="row row-cols-1 row-cols-md-2 align-items-center px-3 ml-0">
           <div class="col-lg-6 text-center text-lg-right">
             <h2 class="text-white mb-4 mt-5 mt-lg-0 ">تستر اختبر نفسك</h2>
             <h4 class="display-3  text-white">
@@ -35,7 +35,7 @@
                   <p>يقوم النظام بشر الامتحان online </p>
                   <p>كما بالإمكان نشر الامتحان على برامج التواصل</p>
               </div>
-              <img  src="{{asset('/assets/img/online.png')}}" alt="">
+              <img class="landingImg" src="{{asset('/assets/img/online.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between">
               <div class="text">
@@ -43,7 +43,7 @@
                 <p>يتيح النظام للأستاذ عملية تخزين الاختيار</p>
                 <p>من خلال هذا العملية يسطيع الأستاذ التعديل علية</p>
               </div>
-              <img  src="{{asset('/assets/img/crop.png')}}" alt="">
+              <img  class="landingImg"  src="{{asset('/assets/img/crop.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between ">
               <div class="text">
@@ -51,7 +51,7 @@
                 <p>يقوم النظام بنشر الاختبار في الوقت المحدد  </p>
                 <p>ليستطيع جميع المتدربين الإجابة في نفس الوقت</p>
               </div>
-              <img  src="{{asset('/assets/img/prepare.png')}}" alt="">
+              <img  class="landingImg" src="{{asset('/assets/img/prepare.png')}}" alt="">
             </div>
             <div class="col d-flex rounded text-right justify-content-between">
               <div class="text">
@@ -59,7 +59,7 @@
                   <p>يقوم النظام بقراه الأجابات وتصحيحها تلقائيا</p>
                   <p>كما يقوم النظام بالتعرف على الإجابه الصحيحة</p>
               </div>
-              <img  src="{{asset('/assets/img/omr.png')}}" alt="">
+              <img  class="landingImg" src="{{asset('/assets/img/omr.png')}}" alt="">
             </div>
 
         </div>
@@ -68,14 +68,14 @@
     <!-- Facilities Start -->
      <!-- About Start -->
      <div class="container-fluid py-5 mt-5 mb-5" id="about-us">
-      <div class="container">
-        <div class="position-relative mx-auto" style="width: 150px;">
+      <div class="container pb-3">
+        <div class="position-relative mx-auto mb-5" style="width: 150px;">
           <h2 class="text-center mx-auto pb-3" style="border-bottom: 2px solid var(--primary); width: 150px;" >من نحن ؟</h2>
           <span class="  d-block mx-auto rounded-circle position-absolute m-0" style=" width:
            20px;height: 20px; bottom: 0;left: 50%;border: 2px solid #325662; background-color: #fff;
           transform: translate(-50%,50%);"></span>
         </div>
-        <div class="row align-items-center mt-5">
+        <div class="row align-items-center">
           <div class="col-lg-7">
             <h3 class="mb-4 text-right">أفضل منصة اختبارات محلية</h3>
             <p class="text-right">
@@ -103,7 +103,7 @@
                 </ul>
               </div>
             </div>
-            <a href="" class="btn btn-primary mt-2 py-2 px-4">المزيد عن منصة تستر</a>
+            <a href="" class="btn btn-primary mt-2 py-2 px-4 d-black mb-3">المزيد عن منصة تستر</a>
           </div>
           <div class="col-lg-5">
             <img

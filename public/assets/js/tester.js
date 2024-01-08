@@ -1,7 +1,7 @@
 /* trainer page */
 let questionNo = 4;
 let optionNo = 4;
-var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
+// var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
 $("#submitTest").click(function() {
     var quizArray = []; // Array to store questions and options
     var exam_info={

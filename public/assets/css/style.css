@@ -10083,3 +10083,11 @@ ul.options-list li:hover > .fa-xmark{
     font-size: 35px;
   }
 /* end timer style */
+/* landing image reponsive  */
+
+@media (max-width: 567px) {
+    .landingImg{
+        width: 150px;
+        height: 150px;
+    }
+}
