@@ -24,6 +24,7 @@ use App\Models\Program;
 
 
 Route::get('/',[HomeController::class,'index'])->name('index');
+Route::get('Admin.index',[AdminController::class,'index'])->name('admin.index');
 Route::middleware('trainer')->group(function () {
     Route::get('exams.home',[ExamController::class,'home'] )->name('exams.home');
     Route::resource('exams',ExamController::class);

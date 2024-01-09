@@ -63,7 +63,7 @@
                     <a class="nav-link" href="{{Route('users.index')}}"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
                     <a class="nav-link" href="{{Route('programs.index')}}"><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
                     <a class="nav-link" href="Requests-Management.html"><i class="fa fa-comments"></i>ادارة المتدربين</a>
-                    <a class="nav-link" href="Overtime.html"><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
+                    <a class="nav-link" href="{{Route('admin.index')}}"><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
                 </li>
 
                 <!--<li class="nav-title">
