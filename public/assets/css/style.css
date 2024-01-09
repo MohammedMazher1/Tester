@@ -10091,3 +10091,19 @@ ul.options-list li:hover > .fa-xmark{
         height: 150px;
     }
 }
+
+/* No exam style */
+.NoExam{
+    /* background-color: #eee; */
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+ }
+ .NoExam > div img{
+     width: 450px;
+     border-radius: 20px;
+     margin-bottom: 10px;
+
+ }

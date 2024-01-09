@@ -78,6 +78,7 @@ class ExamController extends Controller
     }
     public function show()
     {
+        $exam = Exam::find(77);
         $storedTime = new DateTimeImmutable('2024-01-09 11:50:00 AM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
@@ -87,7 +88,9 @@ class ExamController extends Controller
         // Get the total minutes
         $minutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
         $minutes++;
-        $exam = Exam::find(77);
+        if($minutes >= 10){
+            return view('exam.NoExam');
+        }
         return view('exam.show', compact('exam'))->with('timer',$minutes);
 
         // if (is_string($exam->date_of_preTest)) {
