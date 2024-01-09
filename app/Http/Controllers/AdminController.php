@@ -9,6 +9,6 @@ class AdminController extends Controller
 {
     public function index(){
         $exams = Exam::all();
-        return $exams;
+        return view('admin.examList',compact('exams'));
     }
 }
