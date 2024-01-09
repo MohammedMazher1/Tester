@@ -18,6 +18,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('/assets/css/all.min.css')}}" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
   <body>

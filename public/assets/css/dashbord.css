@@ -2950,6 +2950,12 @@ input[type="button"].btn-block {
   background-color: #e4e5e6;
   color: var(--gold-color);
 }
+.card-block-dash{
+    padding: 20px;
+    padding: 1.25rem;
+    /* background-color: #e4e5e6; */
+    /* color: var(--gold-color); */
+}
   .card-block::after {
     content: "";
     display: table;
@@ -2974,9 +2980,9 @@ input[type="button"].btn-block {
   margin-right: 1.25rem; }
 
 .card-header {
-  padding: 12px 20px;
+  /* padding: 12px 20px; */
   padding: 0.75rem 1.25rem;
-  background-color: var(--primary-color);
+  background-color: var(--gold-color);
   color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   .card-header::after {
@@ -3011,6 +3017,7 @@ input[type="button"].btn-block {
 
 .card-primary {
   background-color: var(--black-color);
+  color:white !important;
  }
   .card-primary .card-header,
   .card-primary .card-footer {

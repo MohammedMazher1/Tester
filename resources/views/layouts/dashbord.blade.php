@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
-     <link href="{{asset('/assets/css/simple-line-icons.css')}}" rel="stylesheet">
      <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Main styles for this application -->
 </head>
 
@@ -63,7 +63,7 @@
                     <a class="nav-link" href="{{Route('users.index')}}"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
                     <a class="nav-link" href="{{Route('programs.index')}}"><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
                     <a class="nav-link" href="Requests-Management.html"><i class="fa fa-comments"></i>ادارة المتدربين</a>
-                    <a class="nav-link" href="Overtime.html"><i class="fa fa-calendar"></i> ادارة الاختبارات </a>
+                    <a class="nav-link" href="Overtime.html"><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
                 </li>
 
                 <!--<li class="nav-title">
@@ -119,6 +119,33 @@
     </span>
 
 </footer>
+<script>
+    const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    plugins:{
+        legend:{
+            display:false,
+        }
+    }
+    // scales: {
+    //   y: {
+    //     beginAtZero: true
+    //   }
+    // }
+  }
+});
+</script>
 </body>
 
 </html>
