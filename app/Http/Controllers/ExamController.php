@@ -78,18 +78,17 @@ class ExamController extends Controller
     }
     public function show()
     {
-
-        $storedTime = new DateTimeImmutable('2024-01-08 7:20:00 PM');
+        $storedTime = new DateTimeImmutable('2024-01-09 11:50:00 AM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);
+        // Calculate the difference
         $interval = $currentTime->diff($storedTime);
-        // Calculate the interval in minutes
-        $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
-        // return $interval->i;
+        // Get the total minutes
+        $minutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
+        $minutes++;
         $exam = Exam::find(77);
-
-        return view('exam.show', compact('exam'))->with('timer',$interval->i);
+        return view('exam.show', compact('exam'))->with('timer',$minutes);
 
         // if (is_string($exam->date_of_preTest)) {
         //     $examDate = new DateTime($exam->date_of_preTest);
@@ -111,7 +110,7 @@ class ExamController extends Controller
         $newResult=[];
         $newResult['trainee_id'] = $user->trainee->id;
         $newResult['exam_id'] = $data->exam_id;
-        $newResult['exam_status'] ='pre';
+        $newResult['exam_status'] ='post';
         $result = ExamResult::create($newResult);
         $result->save();
         $newoptions = [];
@@ -121,7 +120,7 @@ class ExamController extends Controller
             $result->examResultDetails()->create($newoptions);
         }
         // ExamResultDetails::create($newOption);
-        return $request->exam;
+        return redirect()->Route('index');
     }
 }
 
