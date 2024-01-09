@@ -9,7 +9,6 @@ class AdminController extends Controller
 {
     public function index(){
         $exams = Exam::all();
-        // dd($exams);
         return $exams;
     }
 }
