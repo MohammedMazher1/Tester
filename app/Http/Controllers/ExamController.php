@@ -8,6 +8,7 @@ use App\Models\Exam;
 use App\Models\User;
 use App\Models\Trainee;
 use App\Models\ExamResult;
+use App\Models\Question;
 use App\Models\ExamResultDetails;
 use Illuminate\Support\Facades\Auth;
 
@@ -58,8 +59,8 @@ class ExamController extends Controller
 
     public function index()
     {
-        // $id = auth()->user()->trainer->id;
-        $exams = Exam::where("trainer_id",6)->get();
+        $id = auth()->user()->trainer->id;
+        $exams = Exam::where("trainer_id",$id)->get();
         // return $exams[0]->name;
         return view("exam.index", compact("exams"));
     }
@@ -72,9 +73,37 @@ class ExamController extends Controller
     }
     public function update(Request $request, string $id)
     {
-        $user = User::find($id);
+        $user = auth()->user();
+        $examData = [];
+        $data = $request->all();
+        $exam = json_decode($data['quizArray']);
+        $examData['name']= $exam[0]->exam_name;
+        $examData['trainer_id']= $user->trainer->id;
+        $examData['date_of_preTest']= $exam[0]->date_of_preTest.' '.$exam[0]->time_of_preTest;
+        $examData['date_of_postTest']= $exam[0]->date_of_postTest.' '.$exam[0]->time_of_postTest;
+        $newexam = Exam::find($id);
+        $newexam->update($examData);
+        // return $newexam->questions[0]->question;
+        $questions = [];
+        for($i = 1; $i < count($exam) ; $i++){
+            $questions['question'] = $exam[$i]->question;
+            $questions['exam_id'] = $newexam->id;
+            $newexam->questions[$i-1]->update($questions);
+            $question = Question::where('question', $exam[$i]->question)->where('exam_id',$newexam->id)->get();
+            $options = get_object_vars($exam[$i]->options);
+            $count = 0;
+            foreach($options as $key => $value){
+                $option = array(
+                    'status' => $value == "false" ? false : true,
+                    'option'=> $key,
+                    'question_id'=> $question[0]->id
+                );
+                 $question[0]->options[$count]->update($option);
+                 $count++;
+            }
+        };
 
-        return view("user.edit", compact("user"));
+        return view('exam.home');
     }
     public function show()
     {

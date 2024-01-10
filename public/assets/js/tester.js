@@ -2,6 +2,8 @@
 let questionNo = 4;
 let optionNo = 4;
 // var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
+
+/* start submit exam */
 $("#submitTest").click(function() {
     var quizArray = []; // Array to store questions and options
     var exam_info={
@@ -55,6 +57,65 @@ $("#submitTest").click(function() {
         }
     });
 });
+/* end submit exam */
+
+/* start exsisting exam */
+$("#editExam").click(function() {
+    const exam_id = $('#exam_id').val();
+    var quizArray = []; // Array to store questions and options
+    var exam_info={
+        'exam_name': $('#exam_name').val(),
+        'date_of_preTest':$('#date_of_preTest').val(),
+        'date_of_postTest':$('#date_of_postTest').val(),
+        'time_of_preTest':$('#time_of_preTest').val(),
+        'time_of_postTest':$('#time_of_postTest').val()
+    }
+    quizArray.push(exam_info);
+    $(".question").each(function() {
+        var question = $(this).find(".questionInput").val();
+        var options = {};
+
+        // Iterate through options within the current question container
+        $(this).find(".options-list li").each(function () {
+            var optionInput = $(this).find(".optionInput").val();
+            var radioValue = $(this).find("input[type='radio']").is(':checked') ? 'true' : 'false';
+
+            // Add option to options object with radio button value as the key
+            options[optionInput] = radioValue;
+        });
+
+        // Create a question object and add it to the quizArray
+        var questionObject = {
+            question: question,
+            options: options
+        };
+
+        quizArray.push(questionObject);
+    });
+    console.log(quizArray);
+    var token = $("input[name='_token']").val();
+
+    // Send the quizArray to the Laravel route using AJAX
+    $.ajax({
+        url: 'http://127.0.0.1:8000/exams/'+exam_id, // Replace with the actual route URL
+        type: 'PUT',
+        data: {
+            "_token":token,
+            quizArray: JSON.stringify(quizArray) }, // Send the quizArray as JSON string
+        success: function(response) {
+            // Handle the server's response if needed
+            document.write(response);
+        },
+        error: function(error) {
+            // Handle errors if any
+            console.log("Error submitting quiz:"+ error);
+            createImageBitmap
+            $('#error').append(error);
+        }
+    });
+});
+/* end edit exsisting exam */
+
 
 $('.newExam').css('transition','all 0.7s ')
 $(".newExam1").hover(function() {

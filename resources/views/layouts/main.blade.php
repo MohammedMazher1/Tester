@@ -142,42 +142,42 @@
           <div class="col-lg-3 col-md-6 mb-5 text-center">
             <h3 class="text-primary mb-4">نتواجد</h3>
             <div class="d-flex justify-content-center">
-              <h4 class="fa fa-map-marker-alt text-primary"></h4>
+              <h4 class="fa fa-map-marker-alt btn-outline-primary"></h4>
               <div class="pl-3">
                 <h5 class="text-white">العنوان</h5>
                 <p>المكلا - الشرج</p>
                </div>
             </div>
             <div class="d-flex justify-content-center">
+                <h4 class="fa fa-envelope btn-outline-primary"></h4>
               <div class="pl-3">
-                <h4 class="fa fa-envelope text-primary d-inline-block"></h4>
                 <h5 class="text-white d-inline-block">الأيميل</h5>
-                <p>muhmmed711300411@gmail.com</p>
+                <p>mo@gmail.com</p>
               </div>
             </div>
             <div class="d-flex justify-content-center">
-              <h4 class="fa fa-phone-alt text-primary"></h4>
+              <h4 class="fa fa-phone-alt btn-outline-primary"></h4>
               <div class="pl-3">
                 <h5 class="text-white">الهاتف</h5>
-                <p>+967 776533887</p>
+                <p>+97 776533887</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 d-flex flex-column justify-content-center">
             <h3 class="text-primary mb-4 text-center">روابط سريعة</h3>
-            <div class="d-flex flex-column justify-content-center align-item-center">
-              <a class="d-flex justify-content-around text-white text-center mb-2 w-100" href="#">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <a class="d-flex text-whit justify-content-between pb-2 w-75" href="#">
                 الرئسية
                 <i class="fa fa-angle-right mr-2"></i>
                 </a>
-              <a class="d-flex justify-content-around text-white text-center mb-2" href="#">
+              <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">
                 من نحن ؟
                 <i class="fa fa-angle-right mr-2"></i>
               </a>
-              <a class="d-flex justify-content-around text-white text-center mb-2" href="#">البرامج
+              <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">البرامج
                 <i class="fa fa-angle-right mr-2"></i>
               </a>
-              <a class="d-flex justify-content-around text-white text-center mb-2" href="#">الخدمات
+              <a class="d-flex text-white justify-content-between pb-2 w-75" href="#">الخدمات
                 <i class="fa fa-angle-right mr-2"></i></a>
             </div>
           </div>
@@ -218,7 +218,6 @@
           <p class="m-0 text-center text-white">
             &copy;
             <a class="text-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme">About me</a>.
-            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
             Designed by
             <a class="text-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme"
               >Mohammed Mazher</a>
