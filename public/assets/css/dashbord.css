@@ -7797,5 +7797,18 @@ base-chart.chart {
 .examlist > a > div:hover > .fa-star{
     color: goldenrod !important;
 }
+.backToDashbord{
+    font-size: 20px;
+    margin:0 ;
+    border:1px solid white;
+    padding:4px 5px;
+    border-radius:50%;
+    transition: all 0.3s ease;
+}
+.backToDashbord:hover{
+    background-color: white;
+    color: var(--gold-color);
+
+}
 
 

@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('admin')}}">
-                        <i class="fa-solid fa-arrow-right margin-0" style="font-size: 20px; margin:0">
+                        <i class="fa-solid fa-arrow-right margin-0 backToDashbord">
                         </i>
                     </a>
                 </li>
