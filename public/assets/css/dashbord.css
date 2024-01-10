@@ -7766,14 +7766,15 @@ base-chart.chart {
     position: relative;
     top: 100px;
     padding: 10px 45px 10px;
-    /* transform: translateX(-10%); */
-    /* margin-top: 100px; */
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     gap: 20px;
 }
-.examlist > div{
+.examlist > a {
+    text-decoration: none;
+}
+.examlist > a > div{
     width: 300px;
     text-align: center;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -7781,19 +7782,19 @@ base-chart.chart {
     transition: all 0.5s ease;
     cursor: pointer;
     border-radius:5px;
+    color: var(--black-color);
 }
-.examlist > div .fa-question{
+.examlist > a > div .fa-question{
     font-size: 25px;
-    color: var(--gold-color);
 }
-.examlist > div:hover{
+.examlist > a > div:hover{
     background-color: var(--gold-color);
     color: #fff;
 }
-.examlist > div:hover >.fa-question{
+.examlist > a > div:hover >.fa-question{
     color: #fff;
 }
-.examlist > div:hover > .fa-star{
+.examlist > a > div:hover > .fa-star{
     color: goldenrod !important;
 }
 
