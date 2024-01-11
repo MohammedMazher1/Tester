@@ -2982,7 +2982,7 @@ input[type="button"].btn-block {
 .card-header {
   /* padding: 12px 20px; */
   padding: 0.75rem 1.25rem;
-  background-color: var(--gold-color);
+  background-color:var(--black-color);
   color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   .card-header::after {
@@ -7811,4 +7811,14 @@ base-chart.chart {
 
 }
 
+.showModelChar{
+    color:#eee;
+    font-size:12px ;
+    background-color:var(--black-color) ;
+    padding:3px 6px; border:none;
+    border-radius: 3px;
+}
+.showModelChar:hover{
+    background-color: var(--gold-color);
+}
 

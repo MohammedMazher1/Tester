@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
      <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Main styles for this application -->
 </head>
 
@@ -119,33 +118,6 @@
     </span>
 
 </footer>
-<script>
-    const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    plugins:{
-        legend:{
-            display:false,
-        }
-    }
-    // scales: {
-    //   y: {
-    //     beginAtZero: true
-    //   }
-    // }
-  }
-});
-</script>
 </body>
 
 </html>

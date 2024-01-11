@@ -41,9 +41,7 @@
                 </div>
                 <!--/col-->
                     <div class="col-sm-6 col-lg-3">
-                        {{-- <div>
-                            <canvas id="myChart"></canvas>
-                        </div> --}}
+                        
                         <div class="card card-inverse card-warning">
                             <div class="card-block-dash">
                                 <div class="h1 text-xs-right m-b-2">

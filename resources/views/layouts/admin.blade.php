@@ -12,12 +12,12 @@
     <link rel="shortcut icon" href="{{asset('/assets/img/logo.png')}}">
     <title>إدارة النظام</title>
     <!-- Icons -->
-
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}"> --}}
-    <!-- Main styles for this application -->
     <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body class="navbar-fixed sidebar-nav fixed-nav">
@@ -59,13 +59,29 @@
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
     <script src="{{asset('/assets/js/main.js')}}"></script>
 
-    <!-- Plugins and scripts required by all views -->
-    {{-- <script src="js/libs/Chart.min.js"></script> --}}
-
-    <!-- CoreUI main scripts -->
-
     <script src="{{asset('assets/js/app.js')}}"></script>
+<script>
+  const ctx = document.getElementById('myChart');
 
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['الدرجة الكاملة', 'الاختبار القبلي', 'الاخبار البعدي'],
+      datasets: [{
+        label: '# of Votes',
+        data: [4, 2, 4],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins:{
+          legend:{
+              display:false,
+          }
+      }
+    }
+  })
+</script>
 
 </body>
 
