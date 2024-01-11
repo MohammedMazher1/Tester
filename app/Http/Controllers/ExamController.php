@@ -108,7 +108,7 @@ class ExamController extends Controller
     public function show()
     {
         $exam = Exam::find(80);
-        $storedTime = new DateTimeImmutable('2024-01-10 5:15:00 PM');
+        $storedTime = new DateTimeImmutable('2024-01-11 3:40:00 PM');
         $serverDateTime = new DateTime();
         $serverTime = $serverDateTime->format('Y-m-d H:i:s');
         $currentTime = new DateTimeImmutable($serverTime);

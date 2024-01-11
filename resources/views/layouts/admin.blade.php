@@ -58,18 +58,34 @@
     <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
     <script src="{{asset('/assets/js/main.js')}}"></script>
-
     <script src="{{asset('assets/js/app.js')}}"></script>
 <script>
+    /* show js chart */
+    var ratio =[];
+    var traineeName =[];
+$('#showChart').click(function() {
+    $(".ratio").each(function() {
+        // Iterate through options within the current question container
+        ratio.push($(this).attr('value'));
+    });
+    $(".traineeName").each(function() {
+        // Iterate through options within the current question container
+        traineeName.push($(this).html());
+    });
+    $('#myModal').show();
+});
+$('#modelClose').click(function(){
+    $('#myModal').hide();
+})
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['الدرجة الكاملة', 'الاختبار القبلي', 'الاخبار البعدي'],
+      labels: traineeName,
       datasets: [{
         label: '# of Votes',
-        data: [4, 2, 4],
+        data: ratio,
         borderWidth: 1
       }]
     },

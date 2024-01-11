@@ -385,3 +385,13 @@ new Chart(ctx, {
     }
   }
 });
+
+/* show js chart */
+$('#showChart').click(function() {
+    var ratio =[];
+    $(".ratio").each(function() {
+        // Iterate through options within the current question container
+        ratio.push($(this).html());
+    });
+    console.log(ratio);
+});

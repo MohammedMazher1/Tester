@@ -17,26 +17,34 @@
                                 <th>الجنس</th>
                                 <th>الاختبار القبلي</th>
                                 <td>الاختبار البعدي</td>
-                                <td>الرسم البياني</td>
+                                <td>نسبة التقدم</td>
                             </tr>
                         </thead>
                         <tbody>
                             @for ($i = 0 ; $i < count($traineesDetails['traineesPre']) ; $i++)
                             <tr>
-                                <td>{{$traineesDetails['traineesPre'][$i]['name'][0]->name}}</td>
+                                <td class="traineeName">{{$traineesDetails['traineesPre'][$i]['name'][0]->name}}</td>
                                 <td>{{$traineesDetails['traineesPre'][$i]['email'][0]->email}}</td>
                                 <td>{{$traineesDetails['traineesPre'][$i]['gender'][0]->gender}}</td>
                                 <td>{{$traineesDetails['traineesPre'][$i]['totalTrueOptios']}}/{{$traineesDetails['traineesPre'][$i]['total']}}</td>
                                 @if ($traineesDetails['traineesPost'][$i]['name'][0]->name == $traineesDetails['traineesPre'][$i]['name'][0]->name)
                                 <td>{{$traineesDetails['traineesPost'][$i]['totalTrueOptios']}}/{{$traineesDetails['traineesPost'][$i]['total']}}</td>
                                 @endif
-                                <td><button type="button" class="showModelChar" data-bs-toggle="modal" data-bs-target="#myModal">
-                                    الرسم البياني
-                                  </button></td>
+                                @php
+                                    $total = $traineesDetails['traineesPost'][$i]['total']/$traineesDetails['traineesPost'][$i]['total'];
+                                    $pre = $traineesDetails['traineesPre'][$i]['totalTrueOptios']/$traineesDetails['traineesPre'][$i]['total'];
+                                    $preRatio = $total * $pre * 100;
+                                @endphp
+                                <td class="ratio" value={{$preRatio}}>
+                                    {{$preRatio.'%'}}
+                                </td>
                             </tr>
                             @endfor
                         </tbody>
                     </table>
+                    <button type="button" id="showChart" class="showModelChar">
+                        الرسم البياني
+                     </button>
                      {{-- start model --}}
                      <div class="modal" id="myModal">
                         <div class="modal-dialog">
@@ -55,7 +63,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                              <button type="button" id="modelClose" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
 
                           </div>
