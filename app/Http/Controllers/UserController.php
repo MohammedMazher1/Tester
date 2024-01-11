@@ -72,25 +72,21 @@ class UserController extends Controller
 
         $user=User::find($id)->update($request->all());
         User::saved($user);
-        $user = User::find($id);
         if (!$user) {
             // Handle the case where the user is not found
             return response()->json(['error' => 'User not found'], 404);
         }
-        if ($user->trainer() && $request->input('type') == 'trainee') {
-            // Create a new Trainee record
-            $trainee = new Trainee();
-            $trainee->user_id = $user->id;
-            // Set other trainee attributes as needed
-            $trainee->save();
+        if (isset($user->trainer)) {
             // Delete the corresponding Trainer record
             $user->trainer->delete();
-        }elseif($user->trainee() && $request->input('type') == 'trainer'){
-            $trainer = new Trainer();
-            $trainer->user_id = $user->id;
-            $trainer->save();
-            // Delete the corresponding Trainer record
+            // Create a new Trainee record
+            $user->trainee()->create();
+            // Set other trainee attributes as needed
+
+        }elseif(isset($user->trainee)){
             $user->trainee->delete();
+            $user->trainer()->create();
+            // Delete the corresponding Trainer record
         }
         return redirect()->route("users.index");
     }
