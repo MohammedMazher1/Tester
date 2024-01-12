@@ -8,9 +8,13 @@
     <div class="card" style="margin-right: 25%;margin-top: 10%;">
         <div class="card-header">
             <strong>تعديل بيانات المستخدم </strong>
-
         </div>
         <div class="card-block">
+            @if (Session::get('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{Session::get('error')}}
+                </div>
+            @endif
             <div class="form-group">
                 <label for="company">اسم المستخدم</label>
                 <input type="text" required class="form-control" name="name" id="name" value="{{$user['name']}}" placeholder="اسم المستخدم">

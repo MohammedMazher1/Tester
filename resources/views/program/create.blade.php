@@ -9,6 +9,11 @@
 
             </div>
             <div class="card-block">
+                @if (Session::get('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{Session::get('error')}}
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="company">اسم البرنامج</label>
                     <input type="text" required class="form-control" name="name" id="name" placeholder="اسم البرنامج">

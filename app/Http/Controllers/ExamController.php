@@ -138,7 +138,7 @@ class ExamController extends Controller
         // $testDate = new DateTime('2024-01-03 21:30:00');
         $data = json_decode($request->exam);
         $user = auth()->user();
-
+        
         $newResult=[];
         $newResult['trainee_id'] = $user->trainee->id;
         $newResult['exam_id'] = $data->exam_id;

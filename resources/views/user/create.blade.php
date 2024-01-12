@@ -1,14 +1,18 @@
     @extends('layouts.admin')
     @section('content')
-    <div class="col-sm-10">
+    <div class="col-sm-10 mb-5">
         <form method="POST"  action="{{Route('users.store')}}">
             @csrf
         <div class="card" style="margin-right: 25%;margin-top: 10%;">
             <div class="card-header">
                 <strong>اضافة مستخدم </strong>
-
             </div>
             <div class="card-block">
+                @if (Session::get('error'))
+                <div class="alert alert-danger" role="alert">
+                    {{Session::get('error')}}
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="company">اسم المستخدم</label>
                     <input type="text" required class="form-control" name="name" id="name" placeholder="اسم المستخدم">

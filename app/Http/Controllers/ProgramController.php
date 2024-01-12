@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Program;
 use App\Models\Trainer;
+use Exception;
+use Illuminate\Routing\RedirectController;
 
 class ProgramController extends Controller
 {
@@ -32,8 +34,23 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        $program = $request->only("name","description","trainer_id");
-        $program = Program::create($program);
+        try{
+            $request->validate([
+                "name" => "required|max:255",
+                "description" => "required",
+                "trainer_id" => "required",
+                ]);
+            }catch(Exception $e){
+                return redirect()->back()->with('error','جميع الحقول مطلوبة');
+            }
+            try{
+                $program = $request->only("name","description","trainer_id");
+                $program = Program::create($program);
+
+            }catch(Exception $e){
+                return redirect()->back()->with('error','حدث خطاء في تخزين البيانات');
+            }
+
          return redirect()->route("programs.index");
      }
 
@@ -61,8 +78,21 @@ class ProgramController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        try{
+            $request->validate([
+                "name" => "required|max:255",
+                "description" => "required",
+                "trainer_id" => "required",
+                ]);
+            }catch(Exception $e){
+                return redirect()->back()->with('error','جميع الحقول مطلوبة');
+            }
+            try{
+                Program::find($id)->update($request->all());
 
-        Program::find($id)->update($request->all());
+            }catch(Exception $e){
+                return redirect()->back()->with('error','حدث خطاء في تعديل البيانات');
+            }
         return redirect()->route("programs.index");
     }
 
@@ -71,7 +101,13 @@ class ProgramController extends Controller
      */
     public function destroy(string $id)
     {
-        Program::find($id)->delete();
+        try{
+            
+            Program::find($id)->delete();
+        }
+        catch(Exception $e){
+            return redirect()->back()->with('حدث خطاء في عملية الحذف');
+        }
         return redirect()->route("programs.index");
     }
 }
