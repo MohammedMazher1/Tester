@@ -5,6 +5,7 @@
 
         <div class="col-lg-12">
             <div class="card" style="margin-top: 10%">
+                <a href="{{Route('users.create')}}" class="createUser btn btn-primary" ><i class="fa fa-user-plus"></i> اضافه</a>
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> قائمة المستخدمين
                 </div>
@@ -37,7 +38,6 @@
                     </table>
                 </div>
             </div>
-                <a href="{{Route('users.create')}}" class="createUser" class="btn btn-sm btn-primary"><i class="fa fa-user-plus"></i> اضافه</a>
         </div>
 
     </div>

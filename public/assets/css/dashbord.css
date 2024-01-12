@@ -1972,9 +1972,11 @@ fieldset[disabled] a.btn {
   pointer-events: none; }
 
 .btn-primary {
-  color: var(--white-color);
-  background-color: #187fa3;
-  border-color: var(--white-color); }
+  color: #fff;
+  background-color: var(--gold-color);
+  padding: 8px 15px;
+  margin-bottom: 10px;
+ }
   .btn-primary:hover {
     color:white;
     background-color: #1985ac;
@@ -2941,14 +2943,15 @@ input[type="button"].btn-block {
   display: block;
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
-  background-color: var(--black-color);
-  border: 1px solid #cfd8dc; }
+}
 
 .card-block {
   padding: 20px;
   padding: 1.25rem;
   background-color: #e4e5e6;
+  border: 1px solid #cfd8dc;
   color: var(--gold-color);
+  margin-bottom: 60px;
 }
 .card-block-dash{
     padding: 20px;
@@ -2982,7 +2985,7 @@ input[type="button"].btn-block {
 .card-header {
   /* padding: 12px 20px; */
   padding: 0.75rem 1.25rem;
-  background-color:var(--black-color);
+  background-color: var(--black-color);
   color: #fff;
   border-bottom: 1px solid #cfd8dc; }
   .card-header::after {
@@ -5991,17 +5994,17 @@ ul.icons-list {
         font-size: 18px; }
 
 footer.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 50px;
-  padding: 0 16px;
-  padding: 0 1rem;
-  line-height: 50px;
-  color: var(--white-color);
-  background: var(--black-color);
-  border-radius: 0 25px 0 0 ;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    padding: 0 16px;
+    padding: 0 1rem;
+    line-height: 50px;
+    color: var(--white-color);
+    background: var(--black-color);
+    border-radius: 0 25px 0 0 ;
 }
 .btn-transparent {
   color: var(--white-color);
@@ -7822,3 +7825,17 @@ base-chart.chart {
     background-color: var(--gold-color);
 }
 
+.signInUser{
+    display:flex;
+    gap:5px ;
+    color:#fff ;
+    justify-content:flex-end;
+    margin-left:50px;
+    align-items:center;
+}
+
+@media(max-width: 993px){
+    .signInUser{
+        display: none;
+    }
+}

@@ -44,7 +44,7 @@
                     <a class="nav-link" href="#">الاعدادات</a>
                 </li>
             </ul>
-            <div class="mx-3" style="display:flex; gap:5px ; color:#fff ; justify-content:flex-end; margin-left:50px; align-items:center; ">
+            <div class="mx-3 signInUser">
                 <i class="fa fa-user"></i>
                 <span>{{$user->name}}</span>
             </div>
@@ -61,7 +61,7 @@
                     <li class="nav-item">
                     <a class="nav-link" href="{{Route('users.index')}}"><i class="fa fa-group"></i>  ادارة المستخدمين </a>
                     <a class="nav-link" href="{{Route('programs.index')}}"><i class="fa fa-newspaper-o"></i> ادارة البرامج</a>
-                    <a class="nav-link" href="Requests-Management.html"><i class="fa fa-comments"></i>ادارة المتدربين</a>
+                    <a class="nav-link" href="#"><i class="fa fa-comments"></i>ادارة المتدربين</a>
                     <a class="nav-link" href="{{Route('admin.index')}}"><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
                 </li>
 
@@ -102,22 +102,10 @@
 
     <script src="{{asset('assets/js/app.js')}}"></script>
 
-    <!-- Plugins and scripts required by this views -->
-    <!-- Custom scripts required by this view -->
-    <!-- <script src="js/views/main.js"></script>-->
-    {{-- <script src="js/views/charts.js"></script> --}}
-    <!-- Grunt watch plugin -->
-    {{-- <script src="//localhost:35729/livereload.js"></script> --}}
+
 </body>
 
 </html>
-
-<footer class="footer">
-    <span class="text-left">
-        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023
-    </span>
-
-</footer>
 </body>
 
 </html>

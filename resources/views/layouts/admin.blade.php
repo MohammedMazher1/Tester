@@ -39,7 +39,7 @@
                     <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
                 </li>
             </ul>
-            <div class="mx-3" style="display:flex; gap:5px ; color:#fff ; justify-content:flex-end; margin-left:50px; align-items:center; ">
+            <div class="mx-3 signInUser">
                 <i class="fa fa-user"></i>
                 <span>{{$loginedUser->name}}</span>
             </div>
@@ -102,13 +102,6 @@ $('#modelClose').click(function(){
 </body>
 
 </html>
-
-<footer class="footer">
-    <span class="text-left">
-        <a href="https://mohammedmazher1.github.io/aboutMe/">Mohammed</a> &copy; 2023
-    </span>
-
-</footer>
 </body>
 
 </html>
