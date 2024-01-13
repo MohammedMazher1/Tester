@@ -74,6 +74,10 @@ $('#showChart').click(function() {
     });
     $('#myModal').show();
 });
+
+
+
+
 $('#modelClose').click(function(){
     $('#myModal').hide();
 })
@@ -82,21 +86,35 @@ $('#modelClose').click(function(){
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: traineeName,
-      datasets: [{
+        labels: traineeName,
+        datasets: [{
+          axis: 'y',
         label: '# of Votes',
         data: ratio,
+        fill:false,
+        backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      
+    ],
         borderWidth: 1
       }]
     },
     options: {
+        indexAxis: 'y',
       plugins:{
           legend:{
               display:false,
           }
       }
+
     }
   })
+
 </script>
 
 </body>
