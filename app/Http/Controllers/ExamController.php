@@ -9,8 +9,10 @@ use App\Models\User;
 use App\Models\Trainee;
 use App\Models\ExamResult;
 use App\Models\Question;
+use Illuminate\Support\Facades\Session;
 use App\Models\ExamResultDetails;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use DateTimeImmutable;
 class ExamController extends Controller
@@ -107,42 +109,48 @@ class ExamController extends Controller
     }
     public function show()
     {
-        $exam = Exam::find(80);
-        $storedTime = new DateTimeImmutable('2024-01-11 3:40:00 PM');
         $serverDateTime = new DateTime();
-        $serverTime = $serverDateTime->format('Y-m-d H:i:s');
-        $currentTime = new DateTimeImmutable($serverTime);
-        // Calculate the difference
-        $interval = $currentTime->diff($storedTime);
-        // Get the total minutes
-        $minutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
-        $minutes++;
-        if($minutes >= 10){
-            return view('exam.NoExam');
+        $serverTime = $serverDateTime->format('Y-m-d');
+        $examsThisDay = Exam::whereDate('date_of_preTest', now()->toDateString())
+                  ->orWhereDate('date_of_postTest', now()->toDateString())
+                  ->get();
+            // return $examsThisDay[0]->date_of_preTest;
+        foreach($examsThisDay as $exam){
+            $examDate = new DateTime($exam->date_of_preTest);
+            $currentTime = new DateTime('now');
+             $interval = $currentTime->diff($examDate);
+
+             $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
+
+            if($intervalInMinutes >= 0 && $intervalInMinutes <= 10){
+                Session::put('examStatus', 'pre');
+                return view('exam.show', compact('exam'))->with('timer',10-$intervalInMinutes);
+            }
+
+            // this code to reach the post exam
+            $examDate = new DateTime($exam->date_of_postTest);
+            $currentTime = new DateTime('now');
+             $interval = $currentTime->diff($examDate);
+             $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
+            if($intervalInMinutes >= 0 && $intervalInMinutes <= 10){
+                Session::put('examStatus', 'post');
+                return view('exam.show', compact('exam'))->with('timer',10-$intervalInMinutes);
+
+            }
+
         }
-        return view('exam.show', compact('exam'))->with('timer',$minutes);
-
-        // if (is_string($exam->date_of_preTest)) {
-        //     $examDate = new DateTime($exam->date_of_preTest);
-        // }
-
-        // $testDate = $exam->date_of_preTest->format('Y-M-D');
-        // if ($intervalInMinutes >= 0 && $intervalInMinutes <= 10) {
-        //     return view('test.show',compact('exam'))->with('timer',$intervalInMinutes);
-        // } else{
-        //     return "no exam in this time";
-        // }
+        return view('exam.NoExam');
     }
 
     public function result(Request $request){
         // $testDate = new DateTime('2024-01-03 21:30:00');
         $data = json_decode($request->exam);
         $user = auth()->user();
-        
+
         $newResult=[];
         $newResult['trainee_id'] = $user->trainee->id;
         $newResult['exam_id'] = $data->exam_id;
-        $newResult['exam_status'] ='post';
+        $newResult['exam_status'] =Session::get('examStatus');
         $result = ExamResult::create($newResult);
         $result->save();
         $newoptions = [];

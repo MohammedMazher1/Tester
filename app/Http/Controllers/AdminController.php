@@ -64,24 +64,3 @@ class AdminController extends Controller
         return view('admin.index',compact('traineesDetails'));
     }
 }
-
-// $trainee['name']=$examResult->trainee->user()->get('name');
-//             $trainee['email']=$examResult->trainee->user()->get('email');
-//             $trainee['gender']=$examResult->trainee->user()->get('gender');
-//             if($examResult->exam_status == 'pre'){
-//                 $totalTrueOptios = 0;
-//                 foreach($examResult->examResultDetails as $examResultDetiles){
-//                     if($examResultDetiles->option->status == 1){
-//                         $totalTrueOptios++;
-//                     }
-//                 }
-//             }
- // foreach($examResults as $examResult){
-        //     $trainee_id = $examResult->trainee_id;
-        //     if(in_array($trainee_id,$trainees_IDs) == false){
-        //         array_push($trainees_IDs, $trainee_id);
-        //     }
-        // }
- // $traineePreExam = ExamResult::where('trainee_id', '=', 12)
-        // ->where('exam_status', '=', 'pre')
-        // ->get();

@@ -6,7 +6,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
     <div class="LoginCard shadow borderd p-5 mx-auto my-5 text-right text-primary" style="width: 350px">
-            <p>اسم المستخدم</p>
+            <p>البريد الإلكتروني</p>
             <div class="input-group ">
                 <input id="email" type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 <i class="fa fa-user" style="position: absolute;left: 10px;top: 50%;transform: translateY(-50%)"></i>
