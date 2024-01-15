@@ -31,9 +31,9 @@
         <div class="row row-cols-1 row-cols-md-2 mt-5 row-gap-5">
             <div class="col d-flex rounded text-right  justify-content-between ">
               <div class="text">
-                  <h3>نشر الامتحان online</h3>
+                  <h3>نشر الاختبار online</h3>
                   <p>يقوم النظام بشر الامتحان online </p>
-                  <p>كما بالإمكان نشر الامتحان على برامج التواصل</p>
+                  <p>كما بالإمكان نشر الاختبار على برامج التواصل</p>
               </div>
               <img class="landingImg" src="{{asset('/assets/img/online.png')}}" alt="">
             </div>

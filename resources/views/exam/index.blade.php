@@ -28,9 +28,11 @@
                                 <td>{{$exam['updated_at']}}</td>
                                 <td>{{$exam->questions->count()}}</td>
                                 <td>
-                                    <form style="display: inline" style="padding-right: 10px;color: red;" action="{{Route('exams.edit',$exam['id'])}}" method="GET"><button class="dashbordButton border-0"><i class="fa-regular fa-pen-to-square"></i></button></form>
+                                    <form style="display: inline" style="padding-right: 10px;color: red;" action="{{Route('exams.edit',$exam['id'])}}" method="GET"><button class="dashbordButton border-0" style="outline:none;color:blue;font-size: 18px;
+                                        background: transparent;"><i class="fa-regular fa-pen-to-square"></i></button></form>
                                     <span> | </span>
-                                    <form style="display: inline" style="padding-left: 10px; color: rgb(23, 159, 238);" action="{{Route('exams.destroy',$exam['id'])}}" method="POST">@method('DELETE')@csrf<button class="dashbordButton border-0" style="color: red"><i class="fa-solid fa-trash-can"></i></button></form>
+                                    <form style="display: inline" style="padding-left: 10px; color: rgb(23, 159, 238);" action="{{Route('exams.destroy',$exam['id'])}}" method="POST">@method('DELETE')@csrf<button class="dashbordButton border-0" style="outline:none;color: red; font-size: 18px;
+                                        background: transparent;"><i class="fa-solid fa-trash-can"></i></button></form>
                                 </td>
                             </tr>
                             @endforeach
@@ -38,7 +40,6 @@
                     </table>
                 </div>
             </div >
-                <a href="{{Route('exams.create')}}" class="createexam" class="btn btn-sm btn-primary"><i class="fa fa-exam-plus"></i>تعديل</a>
         </div>
 
     </div>

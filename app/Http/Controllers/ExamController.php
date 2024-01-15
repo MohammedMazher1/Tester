@@ -8,6 +8,7 @@ use App\Models\Exam;
 use App\Models\User;
 use App\Models\Trainee;
 use App\Models\ExamResult;
+use Exception;
 use App\Models\Question;
 use Illuminate\Support\Facades\Session;
 use App\Models\ExamResultDetails;
@@ -161,6 +162,15 @@ class ExamController extends Controller
         }
         // ExamResultDetails::create($newOption);
         return redirect()->Route('index');
+    }
+    public function destroy(string $id)
+    {
+        try{
+            Exam::find($id)->delete();
+        }catch(Exception $e){
+            return redirect()->back()->with('error','لم يتم الحذف');
+        }
+        return redirect()->back();
     }
 }
 

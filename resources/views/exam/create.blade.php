@@ -21,27 +21,28 @@
                         <div
                             class="form-group row row-cols-1 gap-3 rounded text-white text-right p-2 position-relative mt-4 bg-primary">
                             <span class="text"> الاختبار البعدي</span>
-                            <input type="date" class="form-control" name="date_of_postTest" id="date_of_postTest" required
-                                placeholder="التاريخ">
-                            <input type="time" class="form-control" name="time_of_postTest" id="time_of_postTest" required
-                                placeholder="الوقت">
+                            <input type="date" class="form-control" name="date_of_postTest" id="date_of_postTest"
+                                required placeholder="التاريخ">
+                            <input type="time" class="form-control" name="time_of_postTest" id="time_of_postTest"
+                                required placeholder="الوقت">
                         </div>
                     </div>
                 </div>
-                <div class="question p-3 bg-primary mb-4" dir="ltr">
-                    <input type="text" class="questionInput form-control mb-2 w-50" required placeholder="اكتب سوالك هنا ..."
-                        name="q" value="">
+                <div id="div1" class="question  p-3 bg-primary mb-4" ondragstart="drag(event)" draggable="true"
+                    ondrop="drop(event)" ondragover="allowDrop(event)" dir="ltr">
+                    <input type="text" class="questionInput form-control mb-2 w-50" required
+                        placeholder="اكتب سوالك هنا ..." name="q" value="">
                     <ul class="options-list list-unstyled">
                         <li>
-                            <input type="radio" id="q1-firstOption" name="q1-Option"  value="HTML">
+                            <input type="radio" id="q1-firstOption" name="q1-Option" value="HTML">
                             <label for="q1-firstOption">
-                                <input type="text" name="q1-Option" required class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q1-Option" required class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
-                            <input type="radio" id="q1-secondOption"  name="q1-Option" value="HTML">
+                            <input type="radio" id="q1-secondOption" name="q1-Option" value="HTML">
                             <label for="q1-secondOption">
                                 <input type="text" name="q1-Option" class="form-control optionInput" placeholder="OPTION"
                                     required>
@@ -51,8 +52,8 @@
                         <li>
                             <input type="radio" id="q1-thirdOption" name="q1-Option" value="HTML">
                             <label for="q1-thirdOption">
-                                <input type="text" name="q1-Option" required class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q1-Option" required class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
@@ -69,43 +70,45 @@
                         <span>اضافة خيار</span>
                         <i class="fa fa-plus"></i>
                     </div>
+                    <i class="fa-solid fa-compress"></i>
                     <div class="icons">
                         <i class="fa fa-trash"></i>
                     </div>
                 </div>
-                <div class="question p-3 bg-primary mb-4" dir="ltr">
-                    <input type="text" class="questionInput form-control mb-2 w-50" required placeholder="اكتب سوالك هنا ..."
-                        name="q" value="">
+                <div id="div2" class="question p-3 bg-primary mb-4" ondragstart="drag(event)" draggable="true"
+                    ondrop="drop(event)" ondragover="allowDrop(event)" dir="ltr">
+                    <input type="text" class="questionInput form-control mb-2 w-50" required
+                        placeholder="اكتب سوالك هنا ..." name="q" value="">
                     <ul class="options-list list-unstyled">
                         <li>
                             <input type="radio" id="q2-firstOption" name="q2-Option" value="HTML">
                             <label for="q2-firstOption">
-                                <input type="text" name="q2-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q2-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q2-secondOption" name="q2-Option" value="HTML">
                             <label for="q2-secondOption">
-                                <input type="text" name="q2-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q2-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q2-thirdOption" name="q2-Option" value="HTML">
                             <label for="q2-thirdOption">
-                                <input type="text" name="q2-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q2-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q2-fourthOption" name="q2-Option" value="HTML">
                             <label for="q2-fourthOption">
-                                <input type="text" name="q2-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q2-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
@@ -114,43 +117,45 @@
                         <span>اضافة خيار</span>
                         <i class="fa fa-plus"></i>
                     </div>
+                    <i class="fa-solid fa-compress"></i>
                     <div class="icons">
                         <i class="fa fa-trash"></i>
                     </div>
                 </div>
-                <div class="question p-3 bg-primary mb-4" dir="ltr">
+                <div id="div3" class="question p-3 bg-primary mb-4" ondragstart="drag(event)" draggable="true"
+                    ondrop="drop(event)" ondragover="allowDrop(event)" dir="ltr">
                     <input type="text" class="questionInput form-control mb-2 w-50" required
                         placeholder="اكتب سوالك هنا ..." name="q" value="">
                     <ul class="options-list list-unstyled">
                         <li>
                             <input type="radio" id="q1-firstOption" name="q3-Option" value="HTML">
                             <label for="q1-firstOption">
-                                <input type="text" name="q3-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q3-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-secondOption" name="q3-Option" value="HTML">
                             <label for="q1-secondOption">
-                                <input type="text" name="q3-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q3-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-thirdOption" name="q3-Option" value="HTML">
                             <label for="q1-thirdOption">
-                                <input type="text" name="q3-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q3-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-fourthOption" name="q3-Option" value="HTML">
                             <label for="q1-fourthOption">
-                                <input type="text" name="q3-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q3-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
@@ -159,43 +164,45 @@
                         <span>اضافة خيار</span>
                         <i class="fa fa-plus"></i>
                     </div>
+                    <i class="fa-solid fa-compress"></i>
                     <div class="icons">
                         <i class="fa fa-trash"></i>
                     </div>
                 </div>
-                <div class="question p-3 bg-primary mb-4" dir="ltr">
+                <div id="div4" class="question p-3 bg-primary mb-4" ondragstart="drag(event)" draggable="true"
+                    ondrop="drop(event)" ondragover="allowDrop(event)" dir="ltr">
                     <input type="text" class="questionInput form-control mb-2 w-50" required
                         placeholder="اكتب سوالك هنا ..." name="q" value="">
                     <ul class="options-list list-unstyled">
                         <li>
                             <input type="radio" id="q1-firstOption" name="q4-Option" value="HTML">
                             <label for="q1-firstOption">
-                                <input type="text" name="q4-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q4-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-secondOption" name="q4-Option" value="HTML">
                             <label for="q1-secondOption">
-                                <input type="text" name="q4-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q4-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-thirdOption" name="q4-Option" value="HTML">
                             <label for="q1-thirdOption">
-                                <input type="text" name="q4-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q4-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
                         <li>
                             <input type="radio" id="q1-fourthOption" name="q4-Option" value="HTML">
                             <label for="q1-fourthOption">
-                                <input type="text" name="q4-Option" class="form-control optionInput" placeholder="OPTION"
-                                    required>
+                                <input type="text" name="q4-Option" class="form-control optionInput"
+                                    placeholder="OPTION" required>
                             </label>
                             <i class="fa-solid fa-xmark"></i>
                         </li>
@@ -204,6 +211,7 @@
                         <span>اضافة خيار</span>
                         <i class="fa fa-plus"></i>
                     </div>
+                    <i class="fa-solid fa-compress"></i>
                     <div class="icons">
                         <i class="fa fa-trash"></i>
                     </div>

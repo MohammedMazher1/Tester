@@ -1,5 +1,5 @@
 /* trainer page */
-let questionNo = 4;
+let questionNo = 5;
 let optionNo = 4;
 // var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
 
@@ -9,9 +9,10 @@ $("#submitTest").click(function() {
     flage = false;
     var form = document.getElementById('examCreateForm');
       for(var i=0; i < form.elements.length; i++){
-        if (form.elements[i].value === '' && form.elements[i].hasAttribute('required')) {
+        if (form.elements[i].value == '' && form.elements[i].hasAttribute('required')) {
             form.elements[i].style.border = '1px solid red';
             flage=false;
+            break;
         } else if(form.elements[i].value != '' && form.elements[i].hasAttribute('required')){
             flage=true;
             form.elements[i].style.border = '1px solid #ced4da';
@@ -82,10 +83,11 @@ $("#editExam").click(function() {
     /* form validation */
     flage = false;
     var form = document.getElementById('examEditForm');
-      for(var i=0; i < form.elements.length; i++){
-        if (form.elements[i].value === '' && form.elements[i].hasAttribute('required')) {
+    for(var i=0; i < form.elements.length; i++){
+        if (form.elements[i].value == '' && form.elements[i].hasAttribute('required')) {
             form.elements[i].style.border = '1px solid red';
             flage=false;
+            break;
         } else if(form.elements[i].value != '' && form.elements[i].hasAttribute('required')){
             flage=true;
             form.elements[i].style.border = '1px solid #ced4da';
@@ -161,9 +163,10 @@ $(".newExam2").hover(function() {
 });
 
 $("#addQuestion").click(function(){
-$('.questions').append(
+$('#examCreateForm').append(
     `
-    <div class="question p-3 bg-primary mb-4" dir="ltr">
+    <div id="div${questionNo}" class="question p-3 bg-primary mb-4" ondragstart="drag(event)" draggable="true"
+    ondrop="drop(event)" ondragover="allowDrop(event)" dir="ltr">
                 <input type="text" class="questionInput form-control mb-2 w-50" required placeholder="اكتب سوالك هنا ..." name="q" value="">
                 <ul class="options-list list-unstyled">
                   <li>
@@ -199,6 +202,7 @@ $('.questions').append(
                   <span>اضافة خيار</span>
                   <i class="fa fa-plus"></i>
                 </div>
+                <i class="fa-solid fa-compress"></i>
                 <div class="icons">
                   <i class="fa fa-trash"></i>
                 </div>
@@ -216,7 +220,7 @@ $(".questions").on("click",'.addOptionBtn', function() {
     <li>
       <input type="radio" id="new-question${optionNo}" name="${name}" value="HTML">
       <label for="new-question${optionNo}">
-          <input type="text" name="newOPtion-Option" class="newOption-Option form-control" placeholder="OPTION" required>
+          <input type="text" name="newOPtion-Option" class="form-control optionInput" placeholder="OPTION" required>
       </label>
       <i class="fa-solid fa-xmark"></i>
     </li>
@@ -328,8 +332,6 @@ document.getElementById("app").innerHTML = `
   )}</span>
 </div>
 `;
-
-
 function onTimesUp() {
   clearInterval(timerInterval);
   $('#saveTest').click();
@@ -429,6 +431,40 @@ $('#showChart').click(function() {
     console.log(ratio);
 });
 
-/* form requird inputs when submit valdiation  */
+/* this code for move element */
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
 
-/* end form requird inputs when submit valdiation  */
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var draggedId = ev.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(draggedId);
+    console.log(draggedId);
+    // Get the parent node of the dragged element
+    var draggedParent = draggedElement.parentNode;
+    var index = Array.from(draggedParent.children).indexOf(draggedElement);
+    // console.log(index);
+    // Get the target node (the drop target)
+    console.log(ev.target);
+    var dropTarget = ev.target.parentNode.parentNode;
+    var index2 = Array.from(draggedParent.children).indexOf(dropTarget);
+    console.log(index2);
+
+    // Swap places using insertBefore
+    if(index > index2){
+        draggedParent.insertBefore(draggedElement, dropTarget);
+    }else{
+        draggedParent.insertBefore(dropTarget,draggedElement );
+    }
+    // draggedParent.insertBefore(draggedElement, dropTarget.nextSibling);
+    // draggedParent.insertAfter(draggedElement, dropTarget.nextSibling);
+
+    // Reset draggable attribute
+    draggedElement.draggable = true;
+  }
+

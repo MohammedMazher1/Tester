@@ -10107,3 +10107,12 @@ ul.options-list li:hover > .fa-xmark{
      margin-bottom: 10px;
 
  }
+
+ /* move icon */
+ .question > .fa-compress{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+ }
