@@ -55,7 +55,7 @@
                 <!--/row-->
 
                 <div class="card-footer" style="text-align: left;">
-                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> حفظ</button>
+                    <button type="submit" class="btn btn-sm btn-primary" style="margin-bottom: 0"><i class="fa fa-dot-circle-o"></i> حفظ</button>
                     <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> الغاء</button>
                 </div>
 

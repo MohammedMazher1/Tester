@@ -32,7 +32,7 @@
             <div class="col d-flex rounded text-right  justify-content-between ">
               <div class="text">
                   <h3>نشر الاختبار online</h3>
-                  <p>يقوم النظام بشر الامتحان online </p>
+                  <p>يقوم النظام بشر الاختبار online </p>
                   <p>كما بالإمكان نشر الاختبار على برامج التواصل</p>
               </div>
               <img class="landingImg" src="{{asset('/assets/img/online.png')}}" alt="">
@@ -47,7 +47,7 @@
             </div>
             <div class="col d-flex rounded text-right justify-content-between ">
               <div class="text">
-                <h3>امتحان المتدربين </h3>
+                <h3>اختبار المتدربين </h3>
                 <p>يقوم النظام بنشر الاختبار في الوقت المحدد  </p>
                 <p>ليستطيع جميع المتدربين الإجابة في نفس الوقت</p>
               </div>

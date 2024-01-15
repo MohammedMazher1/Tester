@@ -9969,8 +9969,11 @@ a.text-dark:hover, a.text-dark:focus {
  color: white;
 }
 .question i {
-  color:brown;
+  color:#fff;
   cursor: pointer;
+}
+.question i:hover{
+    color:var(--gray-dark);
 }
 .question .addOptionBtn{
   width: 110px;
@@ -9981,14 +9984,14 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .question .icons{
 position: absolute;
-right: -35px;
+right: 17px;
 transition: all 0.5s ease;
 top: 50%;
 font-size: 20px;
 cursor: pointer;
 visibility: hidden;
-
-transform: translateX(-50%);
+color:#fff;
+transform: translateY(75%)
 }
 ul.options-list li .fa-xmark{
   visibility: hidden;
