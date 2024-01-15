@@ -131,7 +131,7 @@ $("#editExam").click(function() {
         var token = $("input[name='_token']").val();
         // Send the quizArray to the Laravel route using AJAX
         $.ajax({
-            url: `${baseUrl}exams/${exam_id}`, // Replace with the actual route URL
+            url: `http://127.0.0.1:8000/exams/${exam_id}`, // Replace with the actual route URL
             type: 'PUT',
             data: {
                 "_token":token,

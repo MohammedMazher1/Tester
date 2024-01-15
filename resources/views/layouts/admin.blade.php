@@ -76,8 +76,6 @@ $('#showChart').click(function() {
 });
 
 
-
-
 $('#modelClose').click(function(){
     $('#myModal').hide();
 })

@@ -36,17 +36,9 @@
                         <label for="q1-firstOption">
                             <input type="text" value="{{$option->option}}" name="q{{$question->id}}-Option" class="form-control optionInput" placeholder="OPTION" required>
                         </label>
-                        <i class="fa-solid fa-xmark"></i>
                       </li>
                     @endforeach
                 </ul>
-                <div class="addOptionBtn text-white border">
-                  <span>اضافة خيار</span>
-                  <i class="fa fa-plus"></i>
-                </div>
-                <div class="icons">
-                  <i class="fa fa-trash"></i>
-                </div>
             </div>
             @endforeach
         </form>
@@ -54,10 +46,6 @@
 
     </div>
     <div class="container">
-      <button class="bg-primary text-white border-0 px-2 py-2 rounded " id="addQuestion">
-      <span>اضافة سوال</span>
-      <i class="fa-solid fa-square-plus"></i>
-    </button>
     <button id="editExam" class="border-0 bg-primary px-4 py-2 text-white mx-auto d-block rounded">ارسال</button>
     </div>
   </div>
