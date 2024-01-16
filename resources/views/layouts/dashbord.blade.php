@@ -44,10 +44,7 @@
                     <a class="nav-link" href="#">الاعدادات</a>
                 </li>
             </ul>
-            <div class="mx-3 signInUser">
-                <i class="fa fa-user"></i>
-                <span>{{$user->name}}</span>
-            </div>
+
         </div>
     </header>
     <div class="sidebar">
@@ -65,18 +62,14 @@
                     <a class="nav-link" href="{{Route('admin.index')}}"><i class="fa fa-calendar"></i> إدارة الاختبارات </a>
                 </li>
 
-                <!--<li class="nav-title">
-                    اضافات اخرى
-                </li>
-                <li class="nav-item">
-
-                </li>-->
-
                 <li class="nav-title">
                     الخصوصية الأمان
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Password-change.html"><i class="icon-lock"></i> تغيير كلمة المرور</a>
+                    <form id="logout" action="{{route('logout') }}" method="POST">
+                        @csrf
+                    <a class="nav-link" onclick="document.getElementById('logout').submit();"><i class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج </a>
+                    </form>
                 </li>
 
             </ul>
@@ -94,12 +87,6 @@
     <script src="{{asset('/assets/js/tether.min.js')}}"></script>
     <script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('/assets/js/pace.min.js')}}"></script>
-
-    <!-- Plugins and scripts required by all views -->
-    {{-- <script src="js/libs/Chart.min.js"></script> --}}
-
-    <!-- CoreUI main scripts -->
-
     <script src="{{asset('assets/js/app.js')}}"></script>
 
 

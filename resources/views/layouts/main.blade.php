@@ -1,6 +1,3 @@
-@php
-    $user = Session()->get('user');
-@endphp
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -69,7 +66,7 @@
                 @guest
                     <a href="{{ Route('login') }}" class="btn btn-primary px-4 ">تسجيل الدخول</a>
                 @else
-                    @if ($user->type == 'admin')
+                    @if (Auth::user()->type == 'admin')
                         <a href="{{ Route('admin') }}" class="btn btn-primary px-5 ml-2 ">الإدارة</a>
                     @endif
                     <div class="mx-3 text-primary">
@@ -77,7 +74,7 @@
 
             @endisset --}}
                         <i class="fa fa-user"></i>
-                        <span>{{ $user->name }}</span>
+                        <span>{{ Auth::user()->name }}</span>
                     </div>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="btn btn-primary px-4"

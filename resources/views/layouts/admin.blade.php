@@ -1,6 +1,3 @@
-@php
-    $loginedUser = Session()->get('user');
-@endphp
 <!DOCTYPE html>
 <html lang="IR-fa" dir="rtl">
 
@@ -41,7 +38,7 @@
             </ul>
             <div class="mx-3 signInUser">
                 <i class="fa fa-user"></i>
-                <span>{{$loginedUser->name}}</span>
+                <span>{{Auth::user()->name}}</span>
             </div>
         </div>
     </header>

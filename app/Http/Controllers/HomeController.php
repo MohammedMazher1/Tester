@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Exception;
+use PhpParser\Node\Stmt\TryCatch;
+
 class HomeController extends Controller
 {
     /**
@@ -24,10 +27,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Auth::user();
-        $user = Auth::user();
-        Session::put('user', $user);
+        try{
+            if(Auth::user()){
+                if(Auth::user()->type=='trainer'){
+                    return redirect()->route('exams.home');
+                }elseif(Auth::user()->type=='admin'){
+                    return redirect()->route('admin');
+                }
+            }
+         }catch(Exception $e){
+             return view('notFound');
+         }
 
-        return view('welcome');
+         return view('welcome');
     }
 }

@@ -1,8 +1,8 @@
 /* trainer page */
 let questionNo = 5;
 let optionNo = 4;
-var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
-
+// var baseUrl = 'https://bafarag.hadramout-bootcamps.com/';
+var baseUrl = 'http://127.0.0.1:8000/exams/';
 
 /* start submit exam */
 $("#submitTest").click(function() {
@@ -58,7 +58,7 @@ $("#submitTest").click(function() {
 
         // Send the quizArray to the Laravel route using AJAX
         $.ajax({
-            url: `${baseUrl}exams`, // Replace with the actual route URL
+            url: `http://127.0.0.1:8000/exams`, // Replace with the actual route URL
             type: 'POST',
             data: {
                 "_token":token,
@@ -263,7 +263,7 @@ $("#saveTest").click(function() {
     console.log("Quiz Array:", exam);
     var token = $("input[name='_token']").val();
     $.ajax({
-        url: `${baseUrl}result`, // Replace with the actual route URL
+        url: `http://127.0.0.1:8000/result`, // Replace with the actual route URL
         type: 'POST',
         headers: {
             headers: {
