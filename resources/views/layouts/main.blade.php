@@ -26,10 +26,10 @@
     <!-- Navbar Start -->
     <div class="container-fluid bg-light position-relative shadow">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <a href=""
+            <a href="/"
                 class="navbar-brand font-weight-bold text-secondary d-flex justify-content-center align-item-center"
                 style="font-size: 50px">
-                <a href="/"><img class="logo" src="{{ asset('/assets/img/logo.png') }}" alt=""></a>
+                <img class="logo" src="{{ asset('/assets/img/logo.png') }}" alt="">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>

@@ -24,27 +24,32 @@ use App\Models\Program;
 
 
 Route::get('/',[HomeController::class,'index'])->name('index');
-Route::get('Admin.index',[AdminController::class,'index'])->name('admin.index');
-Route::get('list{id}',[AdminController::class,'list'])->name('list');
+
+
 Route::middleware('trainer')->group(function () {
     Route::get('exams.home',[ExamController::class,'home'] )->name('exams.home');
     Route::resource('exams',ExamController::class);
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
 });
-Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
-Route::post('/result',[ExamController::class,'result'])->name('result');
-// Route::group(['middleware' => ['auth']], function () {
 
-// });
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
+    Route::post('/result',[ExamController::class,'result'])->name('result');
+});
 
 Route::middleware('admin')->group(function () {
     Route::get('admin', function () {
         return view('admin.dashbord');
     })->name('admin');
     Route::resource('users',UserController::class);
+    Route::resource('programs',ProgramController::class);
+    Route::get('Admin.index',[AdminController::class,'index'])->name('admin.index');
+    Route::get('list{id}',[AdminController::class,'list'])->name('list');
 });
 
-Route::resource('programs',ProgramController::class);
+Route::fallback(function () {
+    return view('notFound');
+});
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
