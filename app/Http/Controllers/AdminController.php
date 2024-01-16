@@ -4,11 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Exam;
+use App\Models\Trainee;
 use App\Models\ExamResult;
+use App\Models\Program;
+use App\Models\Trainer;
 
 class AdminController extends Controller
 {
-
+    public function home(){
+        $trainees = Trainee::all()->count();
+        $trainers = Trainer::all()->count();
+        $programs = Program::all()->count();
+        $exams = Exam::all()->count();
+        $examResults = ExamResult::all()->count();
+        return view('admin.dashbord',compact('trainees','trainers','programs','exams','examResults'));
+    }
     public function index(){
         $exams = Exam::all();
         return view('admin.examList',compact('exams'));

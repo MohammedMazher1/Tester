@@ -38,9 +38,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::middleware('admin')->group(function () {
-    Route::get('admin', function () {
-        return view('admin.dashbord');
-    })->name('admin');
+    Route::get('admin',[AdminController::class,'home'])->name('admin');
     Route::resource('users',UserController::class);
     Route::resource('programs',ProgramController::class);
     Route::get('Admin.index',[AdminController::class,'index'])->name('admin.index');
