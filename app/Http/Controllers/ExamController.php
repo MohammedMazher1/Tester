@@ -125,7 +125,10 @@ class ExamController extends Controller
 
             if($intervalInMinutes >= 0 && $intervalInMinutes <= 10){
                 Session::put('examStatus', 'pre');
-                return view('exam.show', compact('exam'))->with('timer',10-$intervalInMinutes);
+                $timer = 10-$intervalInMinutes;
+                if($timer > 0){
+                    return view('exam.show', compact('exam'))->with('timer',$timer);
+                }
             }
 
             // this code to reach the post exam
@@ -135,7 +138,10 @@ class ExamController extends Controller
              $intervalInMinutes = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
             if($intervalInMinutes >= 0 && $intervalInMinutes <= 10){
                 Session::put('examStatus', 'post');
-                return view('exam.show', compact('exam'))->with('timer',10-$intervalInMinutes);
+                $timer = 10-$intervalInMinutes;
+                if($timer > 0){
+                    return view('exam.show', compact('exam'))->with('timer',$timer);
+                }
 
             }
 
