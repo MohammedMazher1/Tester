@@ -30,7 +30,7 @@ class HomeController extends Controller
         try{
             if(Auth::user()){
                 if(Auth::user()->type=='trainer'){
-                    return redirect()->route('exams.99i');
+                    return redirect()->route('exams.home');
                 }elseif(Auth::user()->type=='admin'){
                     return redirect()->route('admin');
                 }

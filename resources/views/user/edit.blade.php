@@ -25,14 +25,14 @@
                 <input type="tel" required class="form-control" value="{{$user['phone']}}"  name="phone" id="vat" placeholder="776533887">
             </div>
 
-            <div class="row">
+            <div class="row" style="margin: 0">
 
-                <div class="form-group col-sm-8">
+                <div class="form-group col-sm-8" style="padding: 0">
                     <label for="city">الايميل</label>
                     <input type="email" class="form-control" value="{{$user['email']}}" required name="email" id="city" placeholder="example@outlook.sa">
                 </div>
 
-                <div class="form-group col-sm-4">
+                <div class="form-group col-sm-4" style="padding-left:0">
                     <label for="gender">الجنس</label>
                     <select name="gender" class="form-control">
                         @if ($user['gender'] == 'Male')
@@ -47,8 +47,8 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="form-group col-sm-12">
+            <div class="row" style="margin: 0">
+                <div class="form-group col-sm-12" style="padding: 0">
                     <label for="type">نوع المستخدم</label>
                     <select name="type" class="form-control">
                         @if ($user['type'] == 'trainer')
@@ -62,7 +62,7 @@
                     <div class="select-dropdown"></div>
                 </div>
                 <div class="card-footer" style="text-align: left;">
-                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> حفظ</button>
+                <button type="submit" class="btn btn-sm btn-primary" style="margin: 0"><i class="fa fa-dot-circle-o"></i> حفظ</button>
                 <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> الغاء</button>
             </div>
             </div>

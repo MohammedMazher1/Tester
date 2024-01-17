@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="row" style="margin: 0 ; position: relative;">
-                    <div class="form-group col-sm-4">
+                    <div class="form-group col-sm-4" style="padding: 0">
                         <label for="postal-code">المدرب</label>
                         <select name="trainer_id" class="form-control">
                             @foreach ($trainers as $trainer)

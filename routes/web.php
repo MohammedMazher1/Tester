@@ -32,8 +32,13 @@ Route::middleware('trainer')->group(function () {
     Route::get('/exam',[ExamController::class,'index'])->name('exam');
 });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::middleware('trainee')->group(function () {
     Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
+
+});
+
+
+Route::group(['middleware' => ['auth']], function () {
     Route::post('/result',[ExamController::class,'result'])->name('result');
 });
 
