@@ -10029,12 +10029,11 @@ ul.options-list li:hover > .fa-xmark{
   /* start timer style */
 #app{
     display: flex;
-    justify-content: center;
     color: var(--white-color);
-    margin-top: 20px;
+    margin:20px 15px 60px 0 ;
 }
 .base-timer {
-    position: relative;
+    position: fixed;
     width: 100px;
     height: 100px;
   }

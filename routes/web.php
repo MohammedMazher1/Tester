@@ -34,7 +34,6 @@ Route::middleware('trainer')->group(function () {
 
 Route::middleware('trainee')->group(function () {
     Route::get('exam.show',[ExamController::class,'show'] )->name('exam.show');
-
 });
 
 
