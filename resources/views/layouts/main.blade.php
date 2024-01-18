@@ -114,11 +114,11 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 text-center">
-                <h3 class="text-primary mb-4">نتواجد</h3>
+                <h3 class=" btn-outline-primary mb-4">نتواجد</h3>
                 <div class="d-flex justify-content-center">
                     <h4 class="fa fa-map-marker-alt btn-outline-primary"></h4>
                     <div class="pl-3">
-                        <h5 class="text-white">العنوان</h5>
+                        <h5 class="btn-outline-primary text-white">العنوان</h5>
                         <p>المكلا - الشرج</p>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5 d-flex flex-column justify-content-center">
-                <h3 class="text-primary mb-4 text-center">روابط سريعة</h3>
+                <h3 class="btn-outline-primary mb-4 text-center">روابط سريعة</h3>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <a class="d-flex text-whit justify-content-between pb-2 w-75" href="#">
                         الرئسية
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4 text-center">ارسل لنا</h3>
+                <h3 class="btn-outline-primary mb-4 text-center">ارسل لنا</h3>
                 <form action="">
                     <div class="form-group">
                         <input type="text" class="form-control border-0 py-4" placeholder="اسمك "
@@ -177,10 +177,10 @@
         <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
             <p class="m-0 text-center text-white">
                 &copy;
-                <a class="text-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme">About
+                <a class="btn-outline-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme">About
                     me</a>.
                 Designed by
-                <a class="text-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme">Mohammed
+                <a class="btn-outline-primary font-weight-bold" href="https:\\mohammedmazher1.github.io\aboutme">Mohammed
                     Mazher</a>
             </p>
         </div>
