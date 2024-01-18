@@ -21,7 +21,9 @@ use App\Models\Program;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('test',function(){
+    return Auth()->user()->trainer;
+});
 
 Route::get('/',[HomeController::class,'index'])->name('index');
 

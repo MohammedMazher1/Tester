@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('/assets/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/main.css')}}">
+    <link href="./output.css" rel="stylesheet">
      <link href="{{asset('/assets/css/dashbord.css')}}" rel="stylesheet">
     <!-- Main styles for this application -->
 </head>

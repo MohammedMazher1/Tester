@@ -36,6 +36,43 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{-- <div class="userPagination">
+                        {{ $users->links() }}
+                    </div> --}}
+
+                    <div class="pagination" style="display: flex; justify-content:space-between;align-items:center">
+                        <ul class="pagination justify-content-center">
+                            @if ($users->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">&laquo;</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $users->previousPageUrl() }}" rel="prev">&laquo;</a>
+                                </li>
+                            @endif
+                            @foreach ($users->getUrlRange(1, $users->lastPage()) as $page => $url)
+                                <li class="page-item {{ $page == $users->currentPage() ? 'active' : '' }}">
+                                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                </li>
+                            @endforeach
+                            @if ($users->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $users->nextPageUrl() }}" rel="next">&raquo;</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">&raquo;</span>
+                                </li>
+                            @endif
+                        </ul>
+                        <div class="pagination-label">
+                            Page {{ $users->currentPage() }} of {{ $users->lastPage() }}
+                        </div>
+                    </div>
+
+                    <!-- Pagination label -->
+
                 </div>
             </div>
         </div>
