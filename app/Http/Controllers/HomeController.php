@@ -33,6 +33,9 @@ class HomeController extends Controller
                     return redirect()->route('exams.home');
                 }elseif(Auth::user()->type=='admin'){
                     return redirect()->route('admin');
+                }else{
+                    return redirect()->route('exam.show');
+
                 }
             }
          }catch(Exception $e){

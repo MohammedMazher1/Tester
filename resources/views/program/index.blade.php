@@ -39,7 +39,7 @@
                             <ul class="pagination justify-content-center">
                                 @if ($programs->onFirstPage())
                                     <li class="page-item disabled">
-                                        <span class="page-link">&laquo;</span>
+                                        <span class="page-link"><i class="fa-solid fa-chevron-right"></i></span>
                                     </li>
                                 @else
                                     <li class="page-item">
@@ -57,12 +57,12 @@
                                     </li>
                                 @else
                                     <li class="page-item disabled">
-                                        <span class="page-link">&raquo;</span>
+                                        <span class="page-link"><i class="fa-solid fa-chevron-left"></i></span>
                                     </li>
                                 @endif
                             </ul>
                             <div class="pagination-label">
-                                Page {{ $programs->currentPage() }} of {{ $programs->lastPage() }}
+                                الصفحة {{ $programs->currentPage() }} من {{ $programs->lastPage() }}
                             </div>
                         </div>
                     </div>
