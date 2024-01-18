@@ -16,7 +16,7 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $programs = Program::all();
+        $programs = Program::paginate(8);;
         return view("program.index", compact("programs"));
     }
 
@@ -102,7 +102,7 @@ class ProgramController extends Controller
     public function destroy(string $id)
     {
         try{
-            
+
             Program::find($id)->delete();
         }
         catch(Exception $e){

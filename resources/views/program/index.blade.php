@@ -35,6 +35,36 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="pagination" style="display: flex; justify-content:space-between;align-items:center">
+                            <ul class="pagination justify-content-center">
+                                @if ($programs->onFirstPage())
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&laquo;</span>
+                                    </li>
+                                @else
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $programs->previousPageUrl() }}" rel="prev">&laquo;</a>
+                                    </li>
+                                @endif
+                                @foreach ($programs->getUrlRange(1, $programs->lastPage()) as $page => $url)
+                                    <li class="page-item {{ $page == $programs->currentPage() ? 'active' : '' }}">
+                                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                                    </li>
+                                @endforeach
+                                @if ($programs->hasMorePages())
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ $programs->nextPageUrl() }}" rel="next">&raquo;</a>
+                                    </li>
+                                @else
+                                    <li class="page-item disabled">
+                                        <span class="page-link">&raquo;</span>
+                                    </li>
+                                @endif
+                            </ul>
+                            <div class="pagination-label">
+                                Page {{ $programs->currentPage() }} of {{ $programs->lastPage() }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

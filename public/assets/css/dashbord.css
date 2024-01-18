@@ -10,10 +10,7 @@
     font-family:'secoundryFont';
     src: url(../fonts/Agbalumo-Regular.ttf);
   }
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
@@ -3193,8 +3190,8 @@ input[type="button"].btn-block {
     z-index: 2;
     color: var(--white-color);
     cursor: default;
-    background-color: #20a8d8;
-    border-color: #20a8d8; }
+    background-color: var(--gold-color);
+    border-color: var(--gold-color); }
   .page-item.disabled .page-link, .pagination-datatables li.disabled .page-link, .pagination li.disabled .page-link, .page-item.disabled .pagination-datatables li a, .pagination-datatables li .page-item.disabled a, .pagination-datatables li.disabled a, .page-item.disabled .pagination li a, .pagination li .page-item.disabled a, .pagination li.disabled a, .page-item.disabled .page-link:focus, .pagination-datatables li.disabled .page-link:focus, .pagination li.disabled .page-link:focus, .page-item.disabled .pagination-datatables li a:focus, .pagination-datatables li .page-item.disabled a:focus, .pagination-datatables li.disabled a:focus, .page-item.disabled .pagination li a:focus, .pagination li .page-item.disabled a:focus, .pagination li.disabled a:focus, .page-item.disabled .page-link:hover, .pagination-datatables li.disabled .page-link:hover, .pagination li.disabled .page-link:hover, .page-item.disabled .pagination-datatables li a:hover, .pagination-datatables li .page-item.disabled a:hover, .pagination-datatables li.disabled a:hover, .page-item.disabled .pagination li a:hover, .pagination li .page-item.disabled a:hover, .pagination li.disabled a:hover {
     color: #b0bec5;
     pointer-events: none;
@@ -3208,7 +3205,7 @@ input[type="button"].btn-block {
   padding: 8px 12px;
   padding: 0.5rem 0.75rem;
   margin-right: -1px;
-  color: #20a8d8;
+  color: var(--gold-color);
   text-decoration: none;
   background-color: var(--white-color);
   border: 1px solid #ddd; }
