@@ -38,12 +38,6 @@
                 <li class="nav-item p-x-1">
                     <a class="nav-link" href="{{Route('index')}}">الرئيسية</a>
                 </li>
-                <li class="nav-item p-x-1">
-                    <a class="nav-link" href="{{Route('users.index')}}">المستخدمين</a>
-                </li>
-                <li class="nav-item p-x-1">
-                    <a class="nav-link" href="#">الاعدادات</a>
-                </li>
             </ul>
 
         </div>
