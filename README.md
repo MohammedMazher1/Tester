@@ -42,8 +42,8 @@ composer install
 cp .env.example .env
 
 
-# database there are TerserDB folder in the repo
-# you will find the database on it make import for the darabase in your device
+# database : you will find the sql file for the project in TesterDB folder;
+#import the sql file to creat the project database 
 # admin email : muhmmed711300411@gmail.com , password : 0776533887;
 #and other users the password is the phone number 
 
