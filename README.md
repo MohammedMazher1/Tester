@@ -43,7 +43,7 @@ cp .env.example .env
 
 
 # database : you will find the sql file for the project in TesterDB folder;
-#import the sql file to creat the project database 
+#import the sql file to create the project database 
 # admin email : muhmmed711300411@gmail.com , password : 0776533887;
 #and other users the password is the phone number 
 
