@@ -41,11 +41,11 @@ composer install
 # Copy the .env.example file and configure your database connection
 cp .env.example .env
 
-# Generate application key
-php artisan key:generate
 
-# Migrate the database
-php artisan migrate
+# database there are TerserDB folder in the repo
+# you will find the database on it make import for the darabase in your device
+# admin email : muhmmed711300411@gmail.com , password : 0776533887;
+#and other users the password is the phone number 
 
 # Serve the application
 php artisan serve
