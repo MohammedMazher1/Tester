@@ -1,3 +1,4 @@
+<img src="/public/assets/img/logo.png"  width="20%"/>
 # Tester - Education Platform
 
 Welcome to Tester,
