@@ -92,11 +92,8 @@
               لطلاب وتخزينها بشكل آمن.
             </p>
             <div class="row pt-2 pb-4">
-              <div class="col-6 col-md-4">
-                <img class="img-fluid rounded"  src="{{asset('/assets/img/about-1.png')}}" alt="" />
-              </div>
-              <div class="col-6 col-md-8">
-                <ul class="list-inline m-0">
+              <div class="col-12 col-md-12 text-right">
+                <ul class="list-inline m-0 p-0">
                   <li class="py-2 border-top border-bottom">
                     <i class="fa fa-check text-primary mr-3"></i>إنشاء وتعديل اختبارات
                   </li>

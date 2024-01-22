@@ -28,17 +28,20 @@
                                 <td>{{$traineesDetails['traineesPre'][$i]['gender'][0]->gender}}</td>
                                 <td>{{$traineesDetails['traineesPre'][$i]['totalTrueOptios']}}/{{$traineesDetails['traineesPre'][$i]['total']}}</td>
                                 @isset($traineesDetails['traineesPost'][$i])
-                                @if ($traineesDetails['traineesPost'][$i]['name'][0]->name == $traineesDetails['traineesPre'][$i]['name'][0]->name)
-                                <td>{{$traineesDetails['traineesPost'][$i]['totalTrueOptios']}}/{{$traineesDetails['traineesPost'][$i]['total']}}</td>
-                                @endif
+                                @for ($j = 0 ; $j < count($traineesDetails['traineesPost']) ; $j++)
+                                @if ($traineesDetails['traineesPost'][$j]['name'][0]->name == $traineesDetails['traineesPre'][$i]['name'][0]->name)
+                                <td>{{$traineesDetails['traineesPost'][$j]['totalTrueOptios']}}/{{$traineesDetails['traineesPost'][$j]['total']}}</td>
                                 @php
-                                    $post = $traineesDetails['traineesPost'][$i]['totalTrueOptios']/$traineesDetails['traineesPost'][$i]['total'];
+                                    $post = $traineesDetails['traineesPost'][$j]['totalTrueOptios']/$traineesDetails['traineesPost'][$j]['total'];
                                     $pre = $traineesDetails['traineesPre'][$i]['totalTrueOptios']/$traineesDetails['traineesPre'][$i]['total'];
                                     $preRatio = ($post - $pre )* 100;
                                 @endphp
                                 <td class="ratio" value={{$preRatio}}>
                                     {{$preRatio.'%'}}
                                 </td>
+                                @endif
+                                @endfor
+
                                 @endisset
 
                             </tr>

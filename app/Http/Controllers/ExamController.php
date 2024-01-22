@@ -125,6 +125,13 @@ class ExamController extends Controller
 
             if($intervalInMinutes >= 0 && $intervalInMinutes <= 10){
                 Session::put('examStatus', 'pre');
+                $again = ExamResult::where('exam_id','=',$exam->id)
+                ->where('exam_status', '=', Session::get('examStatus'))
+                ->where('trainee_id', '=', auth()->user()->trainee->id)->get();
+                if(count($again) > 0){
+                    $message = 'لقد سبق لك واختبرت هذا الاختبار من قبل';
+                    return view('exam.NoExam' ,compact('message'));
+                }
                 $timer = 10-$intervalInMinutes;
                 if($timer > 0){
                     return view('exam.show', compact('exam'))->with('timer',$timer);
@@ -146,7 +153,9 @@ class ExamController extends Controller
             }
 
         }
-        return view('exam.NoExam');
+        $message = 'كن مستعداً';
+
+        return view('exam.NoExam' ,compact('message'));
     }
 
     public function result(Request $request){
@@ -158,16 +167,18 @@ class ExamController extends Controller
         $newResult['trainee_id'] = $user->trainee->id;
         $newResult['exam_id'] = $data->exam_id;
         $newResult['exam_status'] =Session::get('examStatus');
+
         $result = ExamResult::create($newResult);
         $result->save();
         $newoptions = [];
-        // $newOption['exam_result_id']=$result->id;
+        $newOption['exam_result_id']=$result->id;
         foreach($data->options as $option_id){
             $newoptions['option_id'] = $option_id;
             $result->examResultDetails()->create($newoptions);
         }
         // ExamResultDetails::create($newOption);
-        return redirect()->Route('index');
+            $message = 'لقد تم ارسال اختياراتك بنجاح';
+            return view('exam.NoExam' ,compact('message'));
     }
     public function destroy(string $id)
     {
